@@ -74,57 +74,49 @@
     <!-- Cards grid -->
     <div class="biens-grid" id="biens-grid">
 
-      <!--
-        ╔══════════════════════════════════════════════════════╗
-        ║  MODÈLE DE CARTE — copier-coller et remplir         ║
-        ║  data-mode : "vp" (vente publique) ou "gg"          ║
-        ╚══════════════════════════════════════════════════════╝
-
-      <article class="bien-card" data-mode="vp">
-        <a href="https://www.biddit.be/..." target="_blank" rel="noopener noreferrer">
+      <!-- Maison, Rixensart, Gré à gré -->
+      <article class="bien-card" data-mode="gg">
+        <a href="https://www.immoweb.be/fr/annonce/maison/a-vendre/rixensart/1332/21497735?s=s_L" target="_blank" rel="noopener noreferrer">
           <div class="bien-img-wrap">
             <span class="bien-status en-cours">En vente</span>
-            <span class="bien-mode">Vente publique</span>
-            <img src="../img/biens/nom-du-fichier.jpg" alt="Description du bien" loading="lazy" />
+            <span class="bien-mode">Gré à gré</span>
+            <img src="../img/biens/maison-rixensart.jpg" alt="Maison à Rixensart" loading="lazy" />
           </div>
         </a>
         <div class="bien-body">
           <div class="bien-addr">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a8 8 0 0 1 8 8c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 8-8z"/><circle cx="12" cy="10" r="3"/></svg>
-            Schaerbeek
+            Rixensart
           </div>
-          <p class="bien-title">Maison 4 façades</p>
-          <p class="bien-desc">Rue Example 12 — 4 chambres, jardin, garage.</p>
-          <p class="bien-price">Prix de base : 250 000 €</p>
-          <a href="https://www.biddit.be/..." target="_blank" rel="noopener noreferrer" class="bien-link">
+          <p class="bien-title">Maison</p>
+          <a href="https://www.immoweb.be/fr/annonce/maison/a-vendre/rixensart/1332/21497735?s=s_L" target="_blank" rel="noopener noreferrer" class="bien-link">
+            Voir sur Immoweb
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H9M17 7V15" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Appartement, Woluwé-Saint-Lambert, Vente publique -->
+      <article class="bien-card" data-mode="vp">
+        <a href="https://www.biddit.be/nl/catalog/detail/295303" target="_blank" rel="noopener noreferrer">
+          <div class="bien-img-wrap">
+            <span class="bien-status en-cours">En vente</span>
+            <span class="bien-mode">Vente publique</span>
+            <img src="../img/biens/appart-woluwe-lambert.jpg" alt="Appartement à Woluwé-Saint-Lambert" loading="lazy" />
+          </div>
+        </a>
+        <div class="bien-body">
+          <div class="bien-addr">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a8 8 0 0 1 8 8c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 8-8z"/><circle cx="12" cy="10" r="3"/></svg>
+            Woluwé-Saint-Lambert
+          </div>
+          <p class="bien-title">Appartement</p>
+          <a href="https://www.biddit.be/nl/catalog/detail/295303" target="_blank" rel="noopener noreferrer" class="bien-link">
             Voir sur Biddit
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H9M17 7V15" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
         </div>
       </article>
-
-      <article class="bien-card" data-mode="gg">
-        <div class="bien-img-wrap">
-          <span class="bien-status en-cours">En vente</span>
-          <span class="bien-mode">Gré à gré</span>
-          <img src="../img/biens/nom-du-fichier.jpg" alt="Description du bien" loading="lazy" />
-        </div>
-        <div class="bien-body">
-          <div class="bien-addr">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a8 8 0 0 1 8 8c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 8-8z"/><circle cx="12" cy="10" r="3"/></svg>
-            Bruxelles
-          </div>
-          <p class="bien-title">Appartement</p>
-          <p class="bien-desc">Rue Example 5 — 2 chambres, terrasse.</p>
-          <p class="bien-price">350 000 €</p>
-          <a href="../contact/" class="bien-link">
-            Demander les infos
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H9M17 7V15" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-        </div>
-      </article>
-
-      -->
 
       <!-- Empty state — affiché automatiquement quand aucune carte n'est présente -->
       <div class="biens-empty" id="empty-state">
