@@ -658,6 +658,19 @@ nav[aria-label="Navigation"] { flex: 1; }
 }
 .footer-logo { display: flex; align-items: center; gap: 0.75rem; }
 .footer-logo .brand-mark { width: 32px; height: auto; }
+.footer-logo .brand-name { font-size: 0.62rem; }
+.footer-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+.footer-nav a {
+  font-size: 0.82rem;
+  color: var(--mute);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+.footer-nav a:hover { color: var(--teal); }
 .footer-info {
   text-align: right;
   font-size: 0.82rem;
