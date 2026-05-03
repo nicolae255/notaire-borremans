@@ -61,6 +61,9 @@
       'footer.h.expertise': 'Expertise',
       'footer.h.pages': 'Pages',
       'footer.rights': 'Tous droits réservés',
+      'cookie.text': "Ce site utilise des cookies pour améliorer votre expérience de navigation. En cliquant sur Accepter, vous consentez à leur utilisation.",
+      'cookie.accept': "Accepter",
+      'cookie.decline': "Refuser",
 
       'srv.hero.eyebrow': 'Notaire Stephan Borremans &mdash; Schaerbeek',
       'srv.hero.h1': "Nos domaines<br>d'expertise",
@@ -231,6 +234,9 @@
       'footer.h.expertise': 'Expertise',
       'footer.h.pages': "Pagina's",
       'footer.rights': 'Alle rechten voorbehouden',
+      'cookie.text': "Deze website maakt gebruik van cookies om uw surfervaring te verbeteren. Door op Accepteren te klikken, stemt u in met het gebruik ervan.",
+      'cookie.accept': "Accepteren",
+      'cookie.decline': "Weigeren",
 
       'srv.hero.eyebrow': 'Notaris Stephan Borremans — Schaarbeek',
       'srv.hero.h1': "Onze expertisedomeinen",
@@ -401,6 +407,9 @@
       'footer.h.expertise': 'Expertise',
       'footer.h.pages': 'Pages',
       'footer.rights': 'All rights reserved',
+      'cookie.text': "This website uses cookies to improve your browsing experience. By clicking Accept, you consent to their use.",
+      'cookie.accept': "Accept",
+      'cookie.decline': "Decline",
 
       'srv.hero.eyebrow': 'Notary Stephan Borremans — Schaerbeek',
       'srv.hero.h1': "Our areas<br>of expertise",
@@ -543,5 +552,19 @@
       btn.addEventListener('click', function () { apply(btn.dataset.lang); });
     });
     if (lang !== 'fr') apply(lang); else apply('fr');
+
+    // Cookie banner
+    var cookieBanner = document.getElementById('cookieBanner');
+    if (cookieBanner && !localStorage.getItem('cookieConsent')) {
+      setTimeout(function () { cookieBanner.classList.add('visible'); }, 600);
+      function dismissCookie(val) {
+        localStorage.setItem('cookieConsent', val);
+        cookieBanner.classList.remove('visible');
+      }
+      var acceptBtn = document.getElementById('cookieAccept');
+      var declineBtn = document.getElementById('cookieDecline');
+      if (acceptBtn) acceptBtn.addEventListener('click', function () { dismissCookie('accepted'); });
+      if (declineBtn) declineBtn.addEventListener('click', function () { dismissCookie('declined'); });
+    }
   });
 })();
