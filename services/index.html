@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Services · Notaire Stephan Borremans · Schaerbeek</title>
+<meta name="description" content="Découvrez tous les services notariaux de l'étude Borremans à Schaerbeek : immobilier, succession, droit de la famille, entreprise, ventes publiques." />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://www.notbn.be/services/" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 268 215'><rect x='60' y='0' width='148' height='44' fill='%2300B4CC'/><rect x='108' y='56' width='160' height='44' fill='%2300B4CC'/><rect x='20' y='112' width='148' height='44' fill='%2300B4CC'/><rect x='0' y='168' width='108' height='44' fill='%2300B4CC'/></svg>" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  /* ── Services page local overrides ── */
+  .services-overview {
+    padding: clamp(4rem, 8vw, 7rem) 0;
+    background: #F2F8FA;
+    border-top: 1px solid var(--line);
+  }
+  .services-overview-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border-left: 1px solid var(--line);
+    border-top: 1px solid var(--line);
+    margin-top: 3rem;
+  }
+  .svc-card {
+    padding: 2.5rem 2rem;
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    background: #fff;
+    transition: background 0.2s;
+    text-decoration: none;
+    display: block;
+  }
+  .svc-card:hover { background: var(--teal-light); }
+  .svc-card-icon {
+    width: 44px;
+    height: 44px;
+    background: var(--teal-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--teal);
+    margin-bottom: 1.5rem;
+    transition: background 0.2s;
+  }
+  .svc-card:hover .svc-card-icon { background: rgba(0,180,204,0.25); }
+  .svc-card-num {
+    font-size: 0.68rem;
+    font-weight: 400;
+    color: var(--teal);
+    margin-bottom: 0.6rem;
+    font-family: var(--sans);
+  }
+  .svc-card h3 {
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin-bottom: 0.75rem;
+    line-height: 1.3;
+  }
+  .svc-card p {
+    font-size: 0.85rem;
+    color: var(--mute);
+    line-height: 1.65;
+  }
+  .svc-card-arrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-top: 1.25rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--teal);
+  }
+
+  /* ── Detailed service sections ── */
+  .services-detail {
+    padding: clamp(4rem, 8vw, 7rem) 0;
+    background: var(--bg);
+  }
+  .service-detail-item {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 5rem;
+    padding: 4.5rem 0;
+    border-bottom: 1px solid var(--line);
+    align-items: start;
+  }
+  .service-detail-item:first-child { padding-top: 0; }
+  .service-detail-item:last-child { border-bottom: none; }
+
+  .service-left-col { position: relative; padding-top: 0.25rem; }
+  .service-big-num {
+    font-family: var(--sans);
+    font-size: 5rem;
+    font-weight: 300;
+    color: var(--teal-light);
+    line-height: 1;
+    letter-spacing: -0.04em;
+    position: absolute;
+    top: -1.5rem;
+    left: -1rem;
+    z-index: 0;
+    user-select: none;
+  }
+  .service-left-label {
+    position: relative;
+    z-index: 1;
+  }
+  .service-left-label .service-num {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    color: var(--teal);
+    margin-bottom: 0.75rem;
+    font-family: var(--sans);
+  }
+  .service-left-label h3 {
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin-bottom: 0.5rem;
+  }
+  .service-label {
+    color: var(--mute-2);
+    font-size: 0.82rem;
+    line-height: 1.5;
+    margin-top: 0.5rem;
+  }
+  .service-left-icon {
+    width: 48px;
+    height: 48px;
+    background: var(--teal-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--teal);
+    margin-top: 1.75rem;
+  }
+
+  .service-right-col h2 {
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    margin-bottom: 1.25rem;
+    line-height: 1.2;
+  }
+  .service-right-col p {
+    color: var(--mute);
+    font-size: 0.93rem;
+    line-height: 1.78;
+    margin-bottom: 1rem;
+  }
+  .service-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+  }
+  .service-tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--ink-2);
+    background: var(--bg-soft);
+    border: 1px solid var(--line-2);
+    padding: 0.35rem 0.9rem;
+    border-radius: 100px;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .service-tag:hover {
+    border-color: var(--teal);
+    background: var(--teal-light);
+    color: var(--teal);
+  }
+
+  @media (max-width: 900px) {
+    .service-detail-item { grid-template-columns: 1fr; gap: 2rem; }
+    .service-big-num { display: none; }
+    .services-overview-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 600px) {
+    .services-overview-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="brand" aria-label="Notaire Stephan Borremans — Accueil">
+      <svg class="brand-mark" viewBox="0 0 268 215" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect x="60"  y="0"   width="148" height="44" fill="currentColor"/>
+        <rect x="108" y="56"  width="160" height="44" fill="currentColor"/>
+        <rect x="20"  y="112" width="148" height="44" fill="currentColor"/>
+        <rect x="0"   y="168" width="108" height="44" fill="currentColor"/>
+      </svg>
+    </a>
+    <nav aria-label="Navigation">
+      <ul class="nav-menu">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../services/" class="active">Services</a></li>
+        <li><a href="../biens-a-vendre/">Biens à vendre</a></li>
+      </ul>
+    </nav>
+    <div class="nav-right">
+      <a href="../contact/" class="nav-cta">Rendez-vous</a>
+      <button class="burger" aria-label="Menu" onclick="document.getElementById('nav').classList.toggle('open')">
+        <span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <p class="eyebrow" style="margin-bottom:1.25rem;color:var(--teal)">Notaire Stephan Borremans &mdash; Schaerbeek</p>
+    <h1 style="font-size:clamp(2.4rem,5vw,3.8rem);max-width:580px;line-height:1.1">Nos domaines<br>d'expertise</h1>
+    <p style="color:var(--mute);max-width:480px;margin-top:1.5rem;line-height:1.75;font-size:0.97rem">Une étude notariale complète pour accompagner particuliers et professionnels à chaque étape de leur vie, avec rigueur et discrétion.</p>
+  </div>
+</section>
+
+<!-- SERVICES OVERVIEW GRID -->
+<section class="services-overview">
+  <div class="container">
+    <div class="section-title-center">
+      <p class="eyebrow" style="margin-bottom:0.75rem">Vue d'ensemble</p>
+      <h2>Cinq pôles d'expertise</h2>
+    </div>
+    <div class="services-overview-grid">
+
+      <a href="#immobilier" class="svc-card">
+        <div class="svc-card-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1H4a1 1 0 01-1-1V9.5z" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M9 21V12h6v9" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="svc-card-num">(01)</div>
+        <h3>Immobilier</h3>
+        <p>Achat, vente, financement. Du compromis à l'acte authentique, un accompagnement rigoureux de A à Z.</p>
+        <span class="svc-card-arrow">
+          Voir le détail
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </a>
+
+      <a href="#succession" class="svc-card">
+        <div class="svc-card-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M9 12h6M9 16h6M7 4H4a1 1 0 00-1 1v15a1 1 0 001 1h16a1 1 0 001-1V5a1 1 0 00-1-1h-3" stroke-linecap="round" stroke-linejoin="round"/>
+            <rect x="7" y="2" width="10" height="4" rx="1" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="svc-card-num">(02)</div>
+        <h3>Succession</h3>
+        <p>Testament, donation, héritage. Planification successorale optimisée pour protéger vos proches.</p>
+        <span class="svc-card-arrow">
+          Voir le détail
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </a>
+
+      <a href="#famille" class="svc-card">
+        <div class="svc-card-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <circle cx="9" cy="7" r="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M3 21v-1a6 6 0 016-6h0" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="17" cy="9" r="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M13 21v-1a4 4 0 014-4h0a4 4 0 014 4v1" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="svc-card-num">(03)</div>
+        <h3>Famille</h3>
+        <p>Mariage, cohabitation, séparation. Nous protégeons vos intérêts familiaux avec discrétion.</p>
+        <span class="svc-card-arrow">
+          Voir le détail
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </a>
+
+      <a href="#ventes-publiques" class="svc-card">
+        <div class="svc-card-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M14.5 2.5l7 7-14 14-7-7 14-14z" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M3 21l3-3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="svc-card-num">(04)</div>
+        <h3>Ventes publiques</h3>
+        <p>Biddit, gré à gré, adjudication. Organisation complète de la mise en vente de votre bien.</p>
+        <span class="svc-card-arrow">
+          Voir le détail
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </a>
+
+      <a href="#entreprise" class="svc-card">
+        <div class="svc-card-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M2 20h20M4 20V8l8-5 8 5v12M10 20v-5h4v5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="svc-card-num">(05)</div>
+        <h3>Entreprise</h3>
+        <p>Société, cession, statuts. Structuration et transmission de vos projets professionnels.</p>
+        <span class="svc-card-arrow">
+          Voir le détail
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES DETAIL -->
+<section class="services-detail">
+  <div class="container">
+
+    <!-- 01 — Immobilier -->
+    <div class="service-detail-item" id="immobilier">
+      <div class="service-left-col">
+        <div class="service-big-num">01</div>
+        <div class="service-left-label">
+          <div class="service-num">01</div>
+          <h3>Immobilier</h3>
+          <p class="service-label">Achat · Vente · Financement</p>
+        </div>
+        <div class="service-left-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+            <path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1H4a1 1 0 01-1-1V9.5z" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M9 21V12h6v9" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </div>
+      <div class="service-right-col">
+        <h2>Transactions immobilières</h2>
+        <p>Notre étude sécurise vos transactions immobilières de A à Z. Du compromis de vente à l'acte authentique, nous vérifions chaque document, gérons les formalités administratives et vous conseillons pour optimiser votre investissement.</p>
+        <p>Que vous soyez acquéreur ou vendeur, particulier ou professionnel, nous vous offrons un accompagnement rigoureux et personnalisé à chaque étape.</p>
+        <div class="service-tags">
+          <span class="service-tag">Compromis de vente</span>
+          <span class="service-tag">Acte authentique</span>
+          <span class="service-tag">Droit d'hypothèque</span>
+          <span class="service-tag">Partage immobilier</span>
+          <span class="service-tag">Vente en viager</span>
+          <span class="service-tag">Certificat PEB</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 02 — Succession -->
+    <div class="service-detail-item" id="succession">
+      <div class="service-left-col">
+        <div class="service-big-num">02</div>
+        <div class="service-left-label">
+          <div class="service-num">02</div>
+          <h3>Succession</h3>
+          <p class="service-label">Testament · Donation · Héritage</p>
+        </div>
+        <div class="service-left-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+            <path d="M9 12h6M9 16h6M7 4H4a1 1 0 00-1 1v15a1 1 0 001 1h16a1 1 0 001-1V5a1 1 0 00-1-1h-3" stroke-linecap="round" stroke-linejoin="round"/>
+            <rect x="7" y="2" width="10" height="4" rx="1" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </div>
+      <div class="service-right-col">
+        <h2>Planification successorale</h2>
+        <p>Protégez vos proches et organisez la transmission de votre patrimoine dans les meilleures conditions fiscales et juridiques. Nous rédigeons testaments, actes de donation et planifions votre succession avec pédagogie.</p>
+        <p>Notre expertise vous permet d'anticiper les démarches et d'éviter les conflits familiaux lors de la transmission de votre patrimoine.</p>
+        <div class="service-tags">
+          <span class="service-tag">Testament notarié</span>
+          <span class="service-tag">Donation entre vifs</span>
+          <span class="service-tag">Déclaration de succession</span>
+          <span class="service-tag">Acte de notoriété</span>
+          <span class="service-tag">Partage successoral</span>
+          <span class="service-tag">Conseil patrimonial</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 03 — Famille -->
+    <div class="service-detail-item" id="famille">
+      <div class="service-left-col">
+        <div class="service-big-num">03</div>
+        <div class="service-left-label">
+          <div class="service-num">03</div>
+          <h3>Famille</h3>
+          <p class="service-label">Mariage · Cohabitation · Séparation</p>
+        </div>
+        <div class="service-left-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+            <circle cx="9" cy="7" r="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M3 21v-1a6 6 0 016-6h0" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="17" cy="9" r="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M13 21v-1a4 4 0 014-4h0a4 4 0 014 4v1" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </div>
+      <div class="service-right-col">
+        <h2>Droit de la famille</h2>
+        <p>Du contrat de mariage à la cohabitation légale, en passant par les séparations, notre étude vous accompagne dans tous les actes liés à la vie familiale avec discrétion et professionnalisme.</p>
+        <p>Nous vous aidons à choisir le régime matrimonial adapté à votre situation et à protéger vos intérêts et ceux de vos enfants.</p>
+        <div class="service-tags">
+          <span class="service-tag">Contrat de mariage</span>
+          <span class="service-tag">Cohabitation légale</span>
+          <span class="service-tag">Divorce par consentement mutuel</span>
+          <span class="service-tag">Liquidation-partage</span>
+          <span class="service-tag">Adoption</span>
+          <span class="service-tag">Reconnaissance d'enfant</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 04 — Ventes publiques -->
+    <div class="service-detail-item" id="ventes-publiques">
+      <div class="service-left-col">
+        <div class="service-big-num">04</div>
+        <div class="service-left-label">
+          <div class="service-num">04</div>
+          <h3>Ventes publiques</h3>
+          <p class="service-label">Biddit · Gré à gré · Adjudication</p>
+        </div>
+        <div class="service-left-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+            <path d="M14.5 2.5l7 7-14 14-7-7 14-14z" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M3 21l3-3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </div>
+      <div class="service-right-col">
+        <h2>Mise en vente de votre bien</h2>
+        <p>Notaire Borremans organise des ventes publiques et de gré à gré à Schaerbeek et dans la région bruxelloise. Chaque dossier est préparé avec soin pour garantir transparence et sécurité juridique.</p>
+        <p>Nous utilisons la plateforme Biddit pour les enchères en ligne, garantissant une visibilité maximale à votre bien et un processus totalement sécurisé pour les acheteurs comme pour les vendeurs.</p>
+        <div style="margin-top:1.75rem">
+          <a href="../biens-a-vendre/" class="btn btn-primary" style="font-size:0.85rem">Voir nos biens à vendre</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 05 — Entreprise -->
+    <div class="service-detail-item" id="entreprise">
+      <div class="service-left-col">
+        <div class="service-big-num">05</div>
+        <div class="service-left-label">
+          <div class="service-num">05</div>
+          <h3>Entreprise</h3>
+          <p class="service-label">Société · Cession · Statuts</p>
+        </div>
+        <div class="service-left-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+            <path d="M2 20h20M4 20V8l8-5 8 5v12M10 20v-5h4v5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </div>
+      <div class="service-right-col">
+        <h2>Droit des sociétés et entreprises</h2>
+        <p>Constitution de sociétés, modifications statutaires, cessions de parts, apports en nature, dissolution : notre étude intervient à chaque étape de la vie de votre entreprise avec rigueur et efficacité.</p>
+        <p>Nous vous accompagnons dans toutes les démarches liées à la création, la modification ou la transmission de votre structure professionnelle.</p>
+        <div class="service-tags">
+          <span class="service-tag">Constitution de société</span>
+          <span class="service-tag">Modifications statutaires</span>
+          <span class="service-tag">Cession de fonds de commerce</span>
+          <span class="service-tag">Dissolution-liquidation</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section style="background:var(--teal);padding:clamp(3.5rem,7vw,5.5rem) 0">
+  <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:2.5rem;flex-wrap:wrap">
+    <div>
+      <p style="font-size:0.7rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:0.75rem">Étude notariale · Schaerbeek</p>
+      <h2 style="color:#fff;font-size:clamp(1.6rem,3vw,2.2rem);margin-bottom:0.5rem">Prêt à démarrer votre projet ?</h2>
+      <p style="color:rgba(255,255,255,0.75);font-size:0.93rem;max-width:380px;line-height:1.6">Contactez notre étude pour un premier rendez-vous. Nous vous répondrons dans les 24 heures ouvrables.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:0.75rem;flex-shrink:0">
+      <a href="../contact/" class="btn" style="background:#fff;color:var(--teal);border:2px solid #fff;font-size:0.88rem;font-weight:700">Prendre rendez-vous</a>
+      <a href="tel:+3227348638" style="display:inline-flex;align-items:center;justify-content:center;gap:0.5rem;color:rgba(255,255,255,0.85);font-size:0.82rem;font-weight:600;letter-spacing:0.04em;text-decoration:none;padding:0.5rem 0">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        02 734 86 38
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <a href="../index.html" class="footer-logo brand" aria-label="Notaire Stephan Borremans">
+      <svg class="brand-mark" viewBox="0 0 268 215" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect x="60"  y="0"   width="148" height="44" fill="currentColor"/>
+        <rect x="108" y="56"  width="160" height="44" fill="currentColor"/>
+        <rect x="20"  y="112" width="148" height="44" fill="currentColor"/>
+        <rect x="0"   y="168" width="108" height="44" fill="currentColor"/>
+      </svg>
+    </a>
+    <div class="footer-info">
+      Avenue Adolphe Lacomblé 29, 1030 Schaerbeek<br>
+      <a href="tel:+3227348638">02 734 86 38</a><br>
+      <a href="mailto:info@notbn.be">info@notbn.be</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>Stephan Borremans Société Notariale</span>
+    <span>&copy; 2026 &mdash; Tous droits réservés</span>
+  </div>
+</footer>
+
+<script>
+  document.addEventListener('click', function(e) {
+    var nav = document.getElementById('nav');
+    if (!nav.contains(e.target)) nav.classList.remove('open');
+  });
+</script>
+</body>
+</html>

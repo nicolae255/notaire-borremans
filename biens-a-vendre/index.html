@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Biens à vendre · Notaire Stephan Borremans · Schaerbeek</title>
+<meta name="description" content="Consultez les biens immobiliers à vendre organisés par le notaire Stephan Borremans à Schaerbeek. Ventes publiques et de gré à gré." />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://www.notbn.be/biens-a-vendre/" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 268 215'><rect x='60' y='0' width='148' height='44' fill='%2300B4CC'/><rect x='108' y='56' width='160' height='44' fill='%2300B4CC'/><rect x='20' y='112' width='148' height='44' fill='%2300B4CC'/><rect x='0' y='168' width='108' height='44' fill='%2300B4CC'/></svg>" />
+<link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="brand" aria-label="Notaire Stephan Borremans — Accueil">
+      <svg class="brand-mark" viewBox="0 0 268 215" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect x="60"  y="0"   width="148" height="44" fill="currentColor"/>
+        <rect x="108" y="56"  width="160" height="44" fill="currentColor"/>
+        <rect x="20"  y="112" width="148" height="44" fill="currentColor"/>
+        <rect x="0"   y="168" width="108" height="44" fill="currentColor"/>
+      </svg>
+    </a>
+    <nav aria-label="Navigation">
+      <ul class="nav-menu">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../services/">Services</a></li>
+        <li><a href="../biens-a-vendre/" class="active">Biens à vendre</a></li>
+      </ul>
+    </nav>
+    <div class="nav-right">
+      <a href="../contact/" class="nav-cta">Rendez-vous</a>
+      <button class="burger" aria-label="Menu" onclick="document.getElementById('nav').classList.toggle('open')">
+        <span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <p class="eyebrow" style="margin-bottom:1.25rem;color:var(--teal)">Ventes publiques et de gré à gré</p>
+    <h1 style="font-size:clamp(2.4rem,5vw,3.8rem);max-width:560px;line-height:1.1">Biens à vendre</h1>
+    <p style="color:var(--mute);max-width:480px;margin-top:1.5rem;line-height:1.75;font-size:0.97rem">Notre sélection de propriétés à Schaerbeek et en région bruxelloise, organisée avec le sérieux et la transparence de l'étude Borremans.</p>
+  </div>
+</section>
+
+<!-- FILTER + GRID -->
+<section style="background:var(--bg-soft);border-top:1px solid var(--line);padding-bottom:clamp(4rem,8vw,6rem)">
+  <div class="container">
+
+    <!-- Filter bar -->
+    <div class="biens-filter">
+      <span class="biens-filter-label">Type :</span>
+      <button class="filter-btn active" data-filter="all">
+        Tous <span class="count" id="count-all">0</span>
+      </button>
+      <button class="filter-btn" data-filter="vp">
+        Vente publique <span class="count" id="count-vp">0</span>
+      </button>
+      <button class="filter-btn" data-filter="gg">
+        Gré à gré <span class="count" id="count-gg">0</span>
+      </button>
+    </div>
+
+    <!-- Cards grid -->
+    <div class="biens-grid" id="biens-grid">
+
+      <!--
+        ╔══════════════════════════════════════════════════════╗
+        ║  MODÈLE DE CARTE — copier-coller et remplir         ║
+        ║  data-mode : "vp" (vente publique) ou "gg"          ║
+        ╚══════════════════════════════════════════════════════╝
+
+      <article class="bien-card" data-mode="vp">
+        <a href="https://www.biddit.be/..." target="_blank" rel="noopener noreferrer">
+          <div class="bien-img-wrap">
+            <span class="bien-status en-cours">En vente</span>
+            <span class="bien-mode">Vente publique</span>
+            <img src="../img/biens/nom-du-fichier.jpg" alt="Description du bien" loading="lazy" />
+          </div>
+        </a>
+        <div class="bien-body">
+          <div class="bien-addr">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a8 8 0 0 1 8 8c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 8-8z"/><circle cx="12" cy="10" r="3"/></svg>
+            Schaerbeek
+          </div>
+          <p class="bien-title">Maison 4 façades</p>
+          <p class="bien-desc">Rue Example 12 — 4 chambres, jardin, garage.</p>
+          <p class="bien-price">Prix de base : 250 000 €</p>
+          <a href="https://www.biddit.be/..." target="_blank" rel="noopener noreferrer" class="bien-link">
+            Voir sur Biddit
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H9M17 7V15" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <article class="bien-card" data-mode="gg">
+        <div class="bien-img-wrap">
+          <span class="bien-status en-cours">En vente</span>
+          <span class="bien-mode">Gré à gré</span>
+          <img src="../img/biens/nom-du-fichier.jpg" alt="Description du bien" loading="lazy" />
+        </div>
+        <div class="bien-body">
+          <div class="bien-addr">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a8 8 0 0 1 8 8c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 8-8z"/><circle cx="12" cy="10" r="3"/></svg>
+            Bruxelles
+          </div>
+          <p class="bien-title">Appartement</p>
+          <p class="bien-desc">Rue Example 5 — 2 chambres, terrasse.</p>
+          <p class="bien-price">350 000 €</p>
+          <a href="../contact/" class="bien-link">
+            Demander les infos
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H9M17 7V15" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </article>
+
+      -->
+
+      <!-- Empty state — affiché automatiquement quand aucune carte n'est présente -->
+      <div class="biens-empty" id="empty-state">
+        <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.25" aria-hidden="true">
+          <path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1H4a1 1 0 01-1-1V9.5z" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M9 21V12h6v9" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <h3>Aucun bien disponible actuellement</h3>
+        <p>De nouveaux biens seront bientôt mis en vente. Contactez-nous pour être informé en priorité ou pour nous confier la vente de votre bien.</p>
+        <a href="../contact/" class="btn btn-primary">Nous contacter</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- INFO VENTES PUBLIQUES -->
+<section style="padding:clamp(4rem,8vw,6rem) 0;background:#fff;border-top:1px solid var(--line)">
+  <div class="container">
+    <div class="two-col-grid">
+      <div>
+        <p class="eyebrow" style="margin-bottom:1rem;color:var(--teal)">Vente publique notariale</p>
+        <h2 style="font-size:clamp(1.6rem,2.8vw,2rem);margin-bottom:1.25rem;line-height:1.2">Comment fonctionne une vente publique ?</h2>
+        <p style="color:var(--mute);font-size:0.92rem;line-height:1.8;margin-bottom:1rem">La vente publique notariale est organisée sous l'autorité du notaire. Elle offre une transparence totale et une sécurité juridique maximale pour les vendeurs et les acquéreurs.</p>
+        <p style="color:var(--mute);font-size:0.92rem;line-height:1.8;margin-bottom:1.75rem">Depuis 2020, les enchères se déroulent principalement sur la plateforme <strong style="color:var(--ink);font-weight:600">Biddit</strong>, permettant de participer en ligne depuis toute la Belgique.</p>
+        <a href="../contact/" class="btn btn-outline-teal">Confier mon bien</a>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:1.75rem">
+        <div style="display:flex;gap:1.25rem;align-items:flex-start">
+          <div style="width:38px;height:38px;flex-shrink:0;background:var(--teal-light);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--teal);font-size:0.72rem;font-weight:600">01</div>
+          <div>
+            <strong style="display:block;font-size:0.88rem;margin-bottom:0.3rem;font-weight:600">Estimation du bien</strong>
+            <p style="color:var(--mute);font-size:0.85rem;line-height:1.65">Notre étude établit un prix de base cohérent avec le marché immobilier local.</p>
+          </div>
+        </div>
+        <div style="display:flex;gap:1.25rem;align-items:flex-start">
+          <div style="width:38px;height:38px;flex-shrink:0;background:var(--teal-light);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--teal);font-size:0.72rem;font-weight:600">02</div>
+          <div>
+            <strong style="display:block;font-size:0.88rem;margin-bottom:0.3rem;font-weight:600">Publication et visites</strong>
+            <p style="color:var(--mute);font-size:0.85rem;line-height:1.65">Le bien est publié sur Biddit et les sites partenaires. Des visites sont organisées avant la vente.</p>
+          </div>
+        </div>
+        <div style="display:flex;gap:1.25rem;align-items:flex-start">
+          <div style="width:38px;height:38px;flex-shrink:0;background:var(--teal-light);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--teal);font-size:0.72rem;font-weight:600">03</div>
+          <div>
+            <strong style="display:block;font-size:0.88rem;margin-bottom:0.3rem;font-weight:600">Séance d'adjudication</strong>
+            <p style="color:var(--mute);font-size:0.85rem;line-height:1.65">Les enchères sont ouvertes en ligne ou en présence. Le notaire adjuge le bien au meilleur enchérisseur.</p>
+          </div>
+        </div>
+        <div style="display:flex;gap:1.25rem;align-items:flex-start">
+          <div style="width:38px;height:38px;flex-shrink:0;background:var(--teal-light);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--teal);font-size:0.72rem;font-weight:600">04</div>
+          <div>
+            <strong style="display:block;font-size:0.88rem;margin-bottom:0.3rem;font-weight:600">Acte notarié</strong>
+            <p style="color:var(--mute);font-size:0.85rem;line-height:1.65">Notre étude rédige et authentifie l'acte de vente dans les délais légaux.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <a href="../index.html" class="footer-logo brand" aria-label="Notaire Stephan Borremans">
+      <svg class="brand-mark" viewBox="0 0 268 215" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect x="60"  y="0"   width="148" height="44" fill="currentColor"/>
+        <rect x="108" y="56"  width="160" height="44" fill="currentColor"/>
+        <rect x="20"  y="112" width="148" height="44" fill="currentColor"/>
+        <rect x="0"   y="168" width="108" height="44" fill="currentColor"/>
+      </svg>
+    </a>
+    <div class="footer-info">
+      Avenue Adolphe Lacomblé 29, 1030 Schaerbeek<br>
+      <a href="tel:+3227348638">02 734 86 38</a><br>
+      <a href="mailto:info@notbn.be">info@notbn.be</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>Stephan Borremans Société Notariale</span>
+    <span>&copy; 2026 &mdash; Tous droits réservés</span>
+  </div>
+</footer>
+
+<script>
+  // Nav close on outside click
+  document.addEventListener('click', function(e) {
+    var nav = document.getElementById('nav');
+    if (!nav.contains(e.target)) nav.classList.remove('open');
+  });
+
+  // Filter logic
+  var filterBtns = document.querySelectorAll('.filter-btn');
+  var cards = document.querySelectorAll('.bien-card');
+  var emptyState = document.getElementById('empty-state');
+
+  function updateCounts() {
+    var total = cards.length;
+    var vp = document.querySelectorAll('.bien-card[data-mode="vp"]').length;
+    var gg = document.querySelectorAll('.bien-card[data-mode="gg"]').length;
+    document.getElementById('count-all').textContent = total;
+    document.getElementById('count-vp').textContent = vp;
+    document.getElementById('count-gg').textContent = gg;
+  }
+
+  function applyFilter(filter) {
+    var visible = 0;
+    cards.forEach(function(c) {
+      var show = filter === 'all' || c.dataset.mode === filter;
+      if (show) {
+        c.style.display = '';
+        visible++;
+      } else {
+        c.style.display = 'none';
+      }
+    });
+    emptyState.style.display = (visible === 0) ? '' : 'none';
+  }
+
+  filterBtns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      filterBtns.forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      applyFilter(btn.dataset.filter);
+    });
+  });
+
+  // Init
+  updateCounts();
+  applyFilter('all');
+</script>
+</body>
+</html>
