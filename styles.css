@@ -172,13 +172,13 @@ h4 {
 }
 .brand-mark {
   width: 42px;
-  height: 34px;
+  height: auto;
   color: var(--teal);
 }
 .brand-name {
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.05em;
+  font-size: 0.65rem;
+  font-weight: 300;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--ink);
   line-height: 1.2;
@@ -635,7 +635,7 @@ nav[aria-label="Navigation"] { flex: 1; }
   gap: 2rem;
 }
 .footer-logo { display: flex; align-items: center; gap: 0.75rem; }
-.footer-logo .brand-mark { width: 32px; height: 25px; }
+.footer-logo .brand-mark { width: 32px; height: auto; }
 .footer-info {
   text-align: right;
   font-size: 0.82rem;
