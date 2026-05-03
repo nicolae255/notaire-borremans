@@ -57,7 +57,10 @@
       'home.prop.p': "Découvrez notre sélection de propriétés à Schaerbeek et ses environs. Ventes publiques et de gré à gré, accompagnement juridique complet par notre étude notariale.",
       'home.prop.cta': 'Voir nos biens',
 
-      'footer.rights': '&copy; 2026 &mdash; Tous droits réservés',
+      'footer.tagline': "Notaire à Schaerbeek. Plus de 30 ans d'expérience au service de vos projets notariaux.",
+      'footer.h.expertise': 'Expertise',
+      'footer.h.pages': 'Pages',
+      'footer.rights': 'Tous droits réservés',
 
       'srv.hero.eyebrow': 'Notaire Stephan Borremans &mdash; Schaerbeek',
       'srv.hero.h1': "Nos domaines<br>d'expertise",
@@ -224,7 +227,10 @@
       'home.prop.p': "Ontdek onze selectie van eigendommen in Schaarbeek en omgeving. Openbare en onderhandse verkopen, volledige juridische begeleiding door ons notariskantoor.",
       'home.prop.cta': 'Onze eigendommen bekijken',
 
-      'footer.rights': '&copy; 2026 &mdash; Alle rechten voorbehouden',
+      'footer.tagline': "Notaris te Schaarbeek. Meer dan 30 jaar ervaring ten dienste van uw notariële projecten.",
+      'footer.h.expertise': 'Expertise',
+      'footer.h.pages': "Pagina's",
+      'footer.rights': 'Alle rechten voorbehouden',
 
       'srv.hero.eyebrow': 'Notaris Stephan Borremans — Schaarbeek',
       'srv.hero.h1': "Onze expertisedomeinen",
@@ -391,7 +397,10 @@
       'home.prop.p': "Discover our selection of properties in Schaerbeek and its surroundings. Public and private sales, complete legal assistance by our notary office.",
       'home.prop.cta': 'View properties',
 
-      'footer.rights': '&copy; 2026 &mdash; All rights reserved',
+      'footer.tagline': "Notary in Schaerbeek. Over 30 years of experience at the service of your notarial projects.",
+      'footer.h.expertise': 'Expertise',
+      'footer.h.pages': 'Pages',
+      'footer.rights': 'All rights reserved',
 
       'srv.hero.eyebrow': 'Notary Stephan Borremans — Schaerbeek',
       'srv.hero.h1': "Our areas<br>of expertise",

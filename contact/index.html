@@ -33,6 +33,14 @@
         <li><a href="/">Home</a></li>
         <li><a href="../services/" data-i18n="nav.services">Services</a></li>
         <li><a href="../biens-a-vendre/" data-i18n="nav.biens">Biens à vendre</a></li>
+        <li class="nav-mobile-extra">
+          <div class="lang-switcher">
+            <button class="lang-btn" data-lang="fr">FR</button>
+            <button class="lang-btn" data-lang="nl">NL</button>
+            <button class="lang-btn" data-lang="en">EN</button>
+          </div>
+          <a href="../contact/" class="nav-cta" style="background:var(--teal-dark)" data-i18n="nav.cta">Rendez-vous</a>
+        </li>
       </ul>
     </nav>
     <div class="nav-right">
@@ -204,36 +212,51 @@
 <!-- FOOTER -->
 <footer class="footer">
   <div class="footer-inner">
-    <a href="/" class="footer-logo brand" aria-label="Notaire Stephan Borremans">
-      <svg class="brand-mark" viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <rect x="80" y="0"  width="120" height="32" fill="currentColor"/>
-        <rect x="40" y="44" width="120" height="32" fill="currentColor"/>
-        <rect x="0"  y="88" width="120" height="32" fill="currentColor"/>
-      </svg>
-      <span class="brand-name" data-i18n="brand.name">Étude Notariale</span>
-    </a>
-    <nav class="footer-nav">
-      <a href="/services/#immobilier" data-i18n="srv.01.h3">Immobilier</a>
-      <a href="/services/#succession" data-i18n="srv.02.h3">Succession</a>
-      <a href="/services/#famille" data-i18n="srv.03.h3">Famille</a>
-      <a href="/services/#ventes-publiques" data-i18n="srv.04.h3">Ventes publiques</a>
-      <a href="/services/#entreprise" data-i18n="srv.05.h3">Entreprise</a>
-      <a href="/services/#donations" data-i18n="srv.06.h3">Donations</a>
-      <a href="/services/#conseil" data-i18n="srv.07.h3">Conseil</a>
-    </nav>
-    <nav class="footer-nav-sm">
-      <a href="/biens-a-vendre/" data-i18n="nav.biens">Biens à vendre</a>
-      <a href="/contact/">Contact</a>
-    </nav>
-    <div class="footer-info">
-      Avenue Adolphe Lacomblé 29, 1030 Schaerbeek<br>
-      <a href="tel:+3227348638">02 734 86 38</a><br>
-      <a href="mailto:info@notbn.be">info@notbn.be</a>
+    <div class="footer-col footer-col-brand">
+      <a href="/" class="footer-logo brand" aria-label="Notaire Stephan Borremans — Accueil">
+        <svg class="brand-mark" viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="80" y="0"  width="120" height="32" fill="currentColor"/>
+          <rect x="40" y="44" width="120" height="32" fill="currentColor"/>
+          <rect x="0"  y="88" width="120" height="32" fill="currentColor"/>
+        </svg>
+        <span class="brand-name" data-i18n="brand.name">Étude Notariale</span>
+      </a>
+      <p class="footer-tagline" data-i18n="footer.tagline">Notaire à Schaerbeek. Plus de 30 ans d'expérience au service de vos projets notariaux.</p>
+    </div>
+    <div class="footer-col">
+      <p class="footer-col-heading" data-i18n="footer.h.expertise">Expertise</p>
+      <nav class="footer-nav">
+        <a href="/services/#immobilier" data-i18n="srv.01.h3">Immobilier</a>
+        <a href="/services/#succession" data-i18n="srv.02.h3">Succession</a>
+        <a href="/services/#famille" data-i18n="srv.03.h3">Famille</a>
+        <a href="/services/#ventes-publiques" data-i18n="srv.04.h3">Ventes publiques</a>
+        <a href="/services/#entreprise" data-i18n="srv.05.h3">Entreprise</a>
+        <a href="/services/#donations" data-i18n="srv.06.h3">Donations</a>
+        <a href="/services/#conseil" data-i18n="srv.07.h3">Conseil</a>
+      </nav>
+    </div>
+    <div class="footer-col">
+      <p class="footer-col-heading" data-i18n="footer.h.pages">Pages</p>
+      <nav class="footer-nav">
+        <a href="/">Home</a>
+        <a href="/services/" data-i18n="nav.services">Services</a>
+        <a href="/biens-a-vendre/" data-i18n="nav.biens">Biens à vendre</a>
+        <a href="/contact/">Contact</a>
+      </nav>
+    </div>
+    <div class="footer-col">
+      <p class="footer-col-heading">Contact</p>
+      <address class="footer-address">
+        Avenue Adolphe Lacomblé 29<br>
+        1030 Schaerbeek<br>
+        <a href="tel:+3227348638">02 734 86 38</a><br>
+        <a href="mailto:info@notbn.be">info@notbn.be</a>
+      </address>
     </div>
   </div>
   <div class="footer-bottom">
-    <span>Stephan Borremans Société Notariale</span>
-    <span data-i18n="footer.rights">&copy; 2026 &mdash; Tous droits réservés</span>
+    <span>&copy; 2026 Stephan Borremans Société Notariale</span>
+    <span data-i18n="footer.rights">Tous droits réservés</span>
   </div>
 </footer>
 
