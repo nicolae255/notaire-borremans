@@ -662,7 +662,7 @@ nav[aria-label="Navigation"] { flex: 1; }
 .footer-nav {
   display: flex;
   flex-direction: column;
-  gap: 0.55rem;
+  gap: 0.45rem;
 }
 .footer-nav a {
   font-size: 0.82rem;
