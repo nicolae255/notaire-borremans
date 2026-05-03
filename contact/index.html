@@ -26,17 +26,22 @@
         <rect x="40" y="44" width="120" height="32" fill="currentColor"/>
         <rect x="0"  y="88" width="120" height="32" fill="currentColor"/>
       </svg>
-      <span class="brand-name">Étude Notariale</span>
+      <span class="brand-name" data-i18n="brand.name">Étude Notariale</span>
     </a>
     <nav aria-label="Navigation">
       <ul class="nav-menu">
         <li><a href="/">Home</a></li>
-        <li><a href="../services/">Services</a></li>
-        <li><a href="../biens-a-vendre/">Biens à vendre</a></li>
+        <li><a href="../services/" data-i18n="nav.services">Services</a></li>
+        <li><a href="../biens-a-vendre/" data-i18n="nav.biens">Biens à vendre</a></li>
       </ul>
     </nav>
     <div class="nav-right">
-      <a href="../contact/" class="nav-cta" style="background:var(--teal-dark)">Rendez-vous</a>
+            <div class="lang-switcher">
+        <button class="lang-btn" data-lang="fr">FR</button>
+        <button class="lang-btn" data-lang="nl">NL</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+      <a href="../contact/" class="nav-cta" style="background:var(--teal-dark)" data-i18n="nav.cta">Rendez-vous</a>
       <button class="burger" aria-label="Menu" onclick="document.getElementById('nav').classList.toggle('open')">
         <span></span><span></span>
       </button>
@@ -51,9 +56,9 @@
 
       <!-- Info -->
       <div class="contact-info">
-        <p class="eyebrow" style="margin-bottom:1rem">Étude notariale</p>
-        <h2>Prenons rendez-vous</h2>
-        <p>Notre étude est à votre disposition pour répondre à toutes vos questions et vous accompagner dans vos démarches notariales. N'hésitez pas à nous contacter.</p>
+        <p class="eyebrow" style="margin-bottom:1rem" data-i18n="contact.eyebrow">Étude notariale</p>
+        <h2 data-i18n="contact.h2">Prenons rendez-vous</h2>
+        <p data-i18n="contact.sub">Notre étude est à votre disposition pour répondre à toutes vos questions et vous accompagner dans vos démarches notariales. N'hésitez pas à nous contacter.</p>
 
         <div class="contact-detail">
           <div class="icon">
@@ -63,7 +68,7 @@
             </svg>
           </div>
           <div class="contact-detail-text">
-            <strong>Adresse</strong>
+            <strong data-i18n="contact.addr.label">Adresse</strong>
             <span>Avenue Adolphe Lacomblé 29<br>1030 Schaerbeek, Bruxelles</span>
           </div>
         </div>
@@ -75,7 +80,7 @@
             </svg>
           </div>
           <div class="contact-detail-text">
-            <strong>Téléphone</strong>
+            <strong data-i18n="contact.phone.label">Téléphone</strong>
             <span><a href="tel:+3227348638">02 734 86 38</a></span>
           </div>
         </div>
@@ -87,7 +92,7 @@
             </svg>
           </div>
           <div class="contact-detail-text">
-            <strong>Email</strong>
+            <strong data-i18n="contact.email.label">Email</strong>
             <span><a href="mailto:info@notbn.be">info@notbn.be</a></span>
           </div>
         </div>
@@ -100,9 +105,9 @@
             </svg>
           </div>
           <div class="contact-detail-text">
-            <strong>Heures d'ouverture</strong>
+            <strong data-i18n="contact.hours.label">Heures d'ouverture</strong>
             <span>
-              Lundi – Vendredi : 10h00 – 18h00
+              <span data-i18n="contact.hours.val">Lundi – Vendredi : 10h00 – 18h00</span>
             </span>
           </div>
         </div>
@@ -110,7 +115,7 @@
 
       <!-- Form -->
       <div class="contact-form">
-        <h3 style="font-size:0.78rem;letter-spacing:0.1em;margin-bottom:1.5rem">Formulaire de contact</h3>
+        <h3 style="font-size:0.78rem;letter-spacing:0.1em;margin-bottom:1.5rem" data-i18n="contact.form.h3">Formulaire de contact</h3>
 
         <!-- Success state -->
         <div id="form-success" style="display:none;text-align:center;padding:3rem 1rem">
@@ -120,8 +125,8 @@
               <path class="success-checkmark" d="M14 27l8 8 16-16" stroke="var(--teal)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </div>
-          <h3 style="font-family:var(--display);font-size:1.4rem;font-weight:500;letter-spacing:0;text-transform:none;margin:1.25rem 0 0.5rem">Demande envoyée</h3>
-          <p style="color:var(--mute);font-size:0.9rem;line-height:1.65">Nous avons bien reçu votre message et reviendrons vers vous dès que possible.</p>
+          <h3 style="font-family:var(--display);font-size:1.4rem;font-weight:500;letter-spacing:0;text-transform:none;margin:1.25rem 0 0.5rem" data-i18n="contact.form.success.h3">Demande envoyée</h3>
+          <p style="color:var(--mute);font-size:0.9rem;line-height:1.65" data-i18n="contact.form.success.p">Nous avons bien reçu votre message et reviendrons vers vous dès que possible.</p>
         </div>
 
         <!-- Form -->
@@ -134,37 +139,37 @@
 
           <div class="form-row">
             <div class="form-group">
-              <label for="prenom">Prénom</label>
-              <input type="text" id="prenom" name="prenom" placeholder="Jean" required />
+              <label for="prenom" data-i18n="contact.form.prenom">Prénom</label>
+              <input type="text" id="prenom" name="prenom" placeholder="Jean" data-i18n-ph="ph.prenom" required />
             </div>
             <div class="form-group">
-              <label for="nom">Nom</label>
-              <input type="text" id="nom" name="nom" placeholder="Dupont" required />
+              <label for="nom" data-i18n="contact.form.nom">Nom</label>
+              <input type="text" id="nom" name="nom" placeholder="Dupont" data-i18n-ph="ph.nom" required />
             </div>
           </div>
           <div class="form-group">
-            <label for="email">Email</label>
+            <label for="email" data-i18n="contact.form.email">Email</label>
             <input type="email" id="email" name="email" placeholder="jean.dupont@email.com" required />
           </div>
           <div class="form-group">
-            <label for="telephone">Téléphone</label>
+            <label for="telephone" data-i18n="contact.form.tel">Téléphone</label>
             <input type="tel" id="telephone" name="telephone" placeholder="02 XXX XX XX" />
           </div>
           <div class="form-group">
-            <label for="sujet">Objet</label>
+            <label for="sujet" data-i18n="contact.form.sujet">Objet</label>
             <select id="sujet" name="sujet">
-              <option value="">Sélectionnez un domaine</option>
-              <option value="immobilier">Immobilier — Achat / Vente</option>
-              <option value="succession">Succession &amp; Donation</option>
-              <option value="famille">Droit de la famille</option>
-              <option value="vente-publique">Vente publique</option>
-              <option value="entreprise">Droit des sociétés</option>
-              <option value="autre">Autre demande</option>
+              <option value="" data-i18n="contact.form.sujet.ph">Sélectionnez un domaine</option>
+              <option value="immobilier" data-i18n="contact.form.opt.immo">Immobilier — Achat / Vente</option>
+              <option value="succession" data-i18n="contact.form.opt.succ">Succession &amp; Donation</option>
+              <option value="famille" data-i18n="contact.form.opt.famille">Droit de la famille</option>
+              <option value="vente-publique" data-i18n="contact.form.opt.vp">Vente publique</option>
+              <option value="entreprise" data-i18n="contact.form.opt.entreprise">Droit des sociétés</option>
+              <option value="autre" data-i18n="contact.form.opt.autre">Autre demande</option>
             </select>
           </div>
           <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" placeholder="Décrivez brièvement votre demande…" required></textarea>
+            <label for="message" data-i18n="contact.form.msg">Message</label>
+            <textarea id="message" name="message" placeholder="Décrivez brièvement votre demande…" data-i18n-ph="ph.msg" required></textarea>
           </div>
 
           <!-- hCaptcha -->
@@ -173,12 +178,12 @@
           <div id="form-error" style="display:none;font-size:0.82rem;color:#c0392b;margin-bottom:1rem;padding:0.75rem 1rem;background:#fdf0ef;border-radius:var(--r-sm);border:1px solid #f5c6c2"></div>
 
           <button type="submit" class="btn btn-primary form-submit" id="submit-btn">
-            <span id="btn-text">Envoyer ma demande</span>
+            <span id="btn-text" data-i18n="contact.form.submit">Envoyer ma demande</span>
             <svg id="btn-spinner" style="display:none;width:18px;height:18px;animation:spin 0.8s linear infinite" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
           </button>
         </form>
 
-        <p style="font-size:0.78rem;color:var(--mute);margin-top:1rem;line-height:1.5">Vos données restent confidentielles et ne sont pas partagées avec des tiers.</p>
+        <p style="font-size:0.78rem;color:var(--mute);margin-top:1rem;line-height:1.5" data-i18n="contact.form.privacy">Vos données restent confidentielles et ne sont pas partagées avec des tiers.</p>
       </div>
 
     </div>
@@ -214,10 +219,11 @@
   </div>
   <div class="footer-bottom">
     <span>Stephan Borremans Société Notariale</span>
-    <span>&copy; 2026 &mdash; Tous droits réservés</span>
+    <span data-i18n="footer.rights">&copy; 2026 &mdash; Tous droits réservés</span>
   </div>
 </footer>
 
+<script src="/i18n.js"></script>
 <script src="https://web3forms.com/client/script.js" async defer></script>
 
 <style>
@@ -282,7 +288,7 @@
         throw new Error(json.message || 'Erreur');
       }
     } catch(err) {
-      errBox.textContent = 'Une erreur est survenue. Veuillez réessayer ou nous appeler au 02 734 86 38.';
+      errBox.textContent = (window.i18nGet && window.i18nGet('contact.form.error')) || 'Une erreur est survenue. Veuillez réessayer ou nous appeler au 02 734 86 38.';
       errBox.style.display = 'block';
       btn.disabled = false;
       btnText.style.display = 'inline';

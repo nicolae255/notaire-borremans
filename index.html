@@ -55,17 +55,22 @@
         <rect x="40" y="44" width="120" height="32" fill="currentColor"/>
         <rect x="0"  y="88" width="120" height="32" fill="currentColor"/>
       </svg>
-      <span class="brand-name">Étude Notariale</span>
+      <span class="brand-name" data-i18n="brand.name">Étude Notariale</span>
     </a>
     <nav aria-label="Navigation">
       <ul class="nav-menu">
         <li><a href="/" class="active">Home</a></li>
-        <li><a href="services/">Services</a></li>
-        <li><a href="biens-a-vendre/">Biens à vendre</a></li>
+        <li><a href="services/" data-i18n="nav.services">Services</a></li>
+        <li><a href="biens-a-vendre/" data-i18n="nav.biens">Biens à vendre</a></li>
       </ul>
     </nav>
     <div class="nav-right">
-      <a href="contact/" class="nav-cta">Rendez-vous</a>
+            <div class="lang-switcher">
+        <button class="lang-btn" data-lang="fr">FR</button>
+        <button class="lang-btn" data-lang="nl">NL</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+      <a href="contact/" class="nav-cta" data-i18n="nav.cta">Rendez-vous</a>
       <button class="burger" aria-label="Menu" onclick="document.getElementById('nav').classList.toggle('open')">
         <span></span><span></span>
       </button>
@@ -76,11 +81,11 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-inner">
-    <p class="hero-eyebrow">Notaire Stephan Borremans &mdash; Schaerbeek</p>
-    <h1>L'expertise<br>au service de<br>vos projets</h1>
-    <p class="hero-sub">Une approche moderne du droit notarial. Plus de 30 ans d'expérience pour vous accompagner avec rigueur dans vos décisions.</p>
+    <p class="hero-eyebrow" data-i18n="home.hero.eyebrow">Notaire Stephan Borremans &mdash; Schaerbeek</p>
+    <h1 data-i18n="home.hero.title">L'expertise<br>au service de<br>vos projets</h1>
+    <p class="hero-sub" data-i18n="home.hero.sub">Une approche moderne du droit notarial. Plus de 30 ans d'expérience pour vous accompagner avec rigueur dans vos décisions.</p>
     <div class="hero-actions">
-      <a href="contact/" class="btn btn-primary">Prendre rendez-vous</a>
+      <a href="contact/" class="btn btn-primary" data-i18n="home.hero.cta1">Prendre rendez-vous</a>
       <a href="tel:+3227348638" class="btn-phone">02 734 86 38</a>
     </div>
   </div>
@@ -90,55 +95,55 @@
 <section class="expertise">
   <div class="container">
     <div class="section-title-center">
-      <h2>Expertise</h2>
+      <h2 data-i18n="home.exp.h2">Expertise</h2>
     </div>
     <div class="expertise-grid">
 
       <div class="expertise-card">
         <div class="card-num">(01)</div>
-        <h3>Immobilier</h3>
-        <p>Sécurisation complète de vos transactions. Du compromis à l'acte authentique, un accompagnement rigoureux.</p>
+        <h3 data-i18n="home.exp.01.h3">Immobilier</h3>
+        <p data-i18n="home.exp.01.p">Sécurisation complète de vos transactions. Du compromis à l'acte authentique, un accompagnement rigoureux.</p>
       </div>
 
       <div class="expertise-card">
         <div class="card-num">(02)</div>
-        <h3>Succession</h3>
-        <p>Planification successorale optimisée. Testaments, donations et conseils patrimoniaux sur mesure.</p>
+        <h3 data-i18n="home.exp.02.h3">Succession</h3>
+        <p data-i18n="home.exp.02.p">Planification successorale optimisée. Testaments, donations et conseils patrimoniaux sur mesure.</p>
       </div>
 
       <div class="expertise-card">
         <div class="card-num">(03)</div>
-        <h3>Famille</h3>
-        <p>Protection de vos intérêts familiaux. Contrats de mariage, cohabitation et séparations.</p>
+        <h3 data-i18n="home.exp.03.h3">Famille</h3>
+        <p data-i18n="home.exp.03.p">Protection de vos intérêts familiaux. Contrats de mariage, cohabitation et séparations.</p>
       </div>
 
       <div class="expertise-card">
         <div class="card-num">(04)</div>
-        <h3>Entreprise</h3>
-        <p>Structuration juridique de vos projets. Constitution, modification et transmission d'entreprises.</p>
+        <h3 data-i18n="home.exp.04.h3">Entreprise</h3>
+        <p data-i18n="home.exp.04.p">Structuration juridique de vos projets. Constitution, modification et transmission d'entreprises.</p>
       </div>
 
       <div class="expertise-card">
         <div class="card-num">(05)</div>
-        <h3>Donations</h3>
-        <p>Optimisation fiscale de vos transmissions. Conseils stratégiques pour donner de votre vivant.</p>
+        <h3 data-i18n="home.exp.05.h3">Donations</h3>
+        <p data-i18n="home.exp.05.p">Optimisation fiscale de vos transmissions. Conseils stratégiques pour donner de votre vivant.</p>
       </div>
 
       <div class="expertise-card">
         <div class="card-num">(06)</div>
-        <h3>Conseil</h3>
-        <p>Expertise juridique pointue. Analyse et solutions pour toutes vos questions patrimoniales.</p>
+        <h3 data-i18n="home.exp.06.h3">Conseil</h3>
+        <p data-i18n="home.exp.06.p">Expertise juridique pointue. Analyse et solutions pour toutes vos questions patrimoniales.</p>
       </div>
 
       <div class="expertise-card">
         <div class="card-num">(07)</div>
-        <h3>Mise en vente de<br>votre bien</h3>
-        <p>Accompagnement complet pour la mise en vente de votre bien : préparation du dossier, vérification des documents, rédaction des actes et conseil sur mesure pour sécuriser chaque étape.</p>
+        <h3 data-i18n="home.exp.07.h3">Mise en vente de<br>votre bien</h3>
+        <p data-i18n="home.exp.07.p">Accompagnement complet pour la mise en vente de votre bien : préparation du dossier, vérification des documents, rédaction des actes et conseil sur mesure pour sécuriser chaque étape.</p>
       </div>
 
     </div>
     <div class="expertise-cta">
-      <a href="services/" class="btn-expertise">Toutes les expertises</a>
+      <a href="services/" class="btn-expertise" data-i18n="home.exp.cta">Toutes les expertises</a>
     </div>
   </div>
 </section>
@@ -149,15 +154,15 @@
     <div class="stats-grid">
       <div class="stat-item">
         <div class="stat-value">30+</div>
-        <div class="stat-label">Années d'expérience</div>
+        <div class="stat-label" data-i18n="home.stats.01.label">Années d'expérience</div>
       </div>
       <div class="stat-item">
-        <div class="stat-value stat-word">Proximité</div>
-        <div class="stat-label">Un suivi personnalisé pour chaque client</div>
+        <div class="stat-value stat-word" data-i18n="home.stats.02.val">Proximité</div>
+        <div class="stat-label" data-i18n="home.stats.02.label">Un suivi personnalisé pour chaque client</div>
       </div>
       <div class="stat-item">
         <div class="stat-value">1000+</div>
-        <div class="stat-label">Clients accompagnés par an</div>
+        <div class="stat-label" data-i18n="home.stats.03.label">Clients accompagnés par an</div>
       </div>
     </div>
   </div>
@@ -170,11 +175,11 @@
 
       <!-- Gauche : texte + CTA -->
       <div>
-        <p class="actu-eyebrow">Fédération Royale du Notariat Belge</p>
-        <h2 class="actu-title">Actualités &amp;<br>Conseils notariaux</h2>
-        <p class="actu-sub">Restez informé des dernières évolutions juridiques, des nouvelles lois et des conseils pratiques publiés par la Fédération Royale du Notariat Belge.</p>
+        <p class="actu-eyebrow" data-i18n="home.actu.eyebrow">Fédération Royale du Notariat Belge</p>
+        <h2 class="actu-title" data-i18n="home.actu.title">Actualités &amp;<br>Conseils notariaux</h2>
+        <p class="actu-sub" data-i18n="home.actu.sub">Restez informé des dernières évolutions juridiques, des nouvelles lois et des conseils pratiques publiés par la Fédération Royale du Notariat Belge.</p>
         <a href="https://www.notaire.be/actualites" target="_blank" rel="noopener noreferrer" class="btn-actu">
-          Voir toutes les actualités
+          <span data-i18n="home.actu.cta">Voir toutes les actualités</span>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M7 17L17 7M17 7H9M17 7V15" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
       </div>
@@ -184,43 +189,43 @@
         <div class="actu-cards">
 
           <a href="https://www.notaire.be/actualites" target="_blank" rel="noopener noreferrer" class="actu-card">
-            <span class="actu-card-tag">Donations</span>
+            <span class="actu-card-tag" data-i18n="home.actu.01.tag">Donations</span>
             <div class="actu-card-body">
-              <p class="actu-card-title">Donations mobilières : une tendance à la hausse</p>
-              <span class="actu-card-date">23 avril 2026</span>
+              <p class="actu-card-title" data-i18n="home.actu.01.title">Donations mobilières : une tendance à la hausse</p>
+              <span class="actu-card-date" data-i18n="home.actu.01.date">23 avril 2026</span>
             </div>
             <svg class="actu-card-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M17 7H9M17 7V15" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
 
           <a href="https://www.notaire.be/actualites" target="_blank" rel="noopener noreferrer" class="actu-card">
-            <span class="actu-card-tag">Succession</span>
+            <span class="actu-card-tag" data-i18n="home.actu.02.tag">Succession</span>
             <div class="actu-card-body">
-              <p class="actu-card-title">Accepter une succession ? Attention aux gestes qui vous engagent</p>
-              <span class="actu-card-date">22 avril 2026</span>
+              <p class="actu-card-title" data-i18n="home.actu.02.title">Accepter une succession ? Attention aux gestes qui vous engagent</p>
+              <span class="actu-card-date" data-i18n="home.actu.02.date">22 avril 2026</span>
             </div>
             <svg class="actu-card-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M17 7H9M17 7V15" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
 
           <a href="https://www.notaire.be/actualites" target="_blank" rel="noopener noreferrer" class="actu-card">
-            <span class="actu-card-tag">Immobilier</span>
+            <span class="actu-card-tag" data-i18n="home.actu.03.tag">Immobilier</span>
             <div class="actu-card-body">
-              <p class="actu-card-title">Baromètre immobilier 2026 : les ventes d'appartements en hausse (+7,8 %)</p>
-              <span class="actu-card-date">9 avril 2026</span>
+              <p class="actu-card-title" data-i18n="home.actu.03.title">Baromètre immobilier 2026 : les ventes d'appartements en hausse (+7,8 %)</p>
+              <span class="actu-card-date" data-i18n="home.actu.03.date">9 avril 2026</span>
             </div>
             <svg class="actu-card-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M17 7H9M17 7V15" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
 
           <a href="https://www.notaire.be/actualites" target="_blank" rel="noopener noreferrer" class="actu-card">
-            <span class="actu-card-tag">Famille</span>
+            <span class="actu-card-tag" data-i18n="home.actu.04.tag">Famille</span>
             <div class="actu-card-body">
-              <p class="actu-card-title">Plus de 138 000 mandats de protection établis en 2025</p>
-              <span class="actu-card-date">10 mars 2026</span>
+              <p class="actu-card-title" data-i18n="home.actu.04.title">Plus de 138 000 mandats de protection établis en 2025</p>
+              <span class="actu-card-date" data-i18n="home.actu.04.date">10 mars 2026</span>
             </div>
             <svg class="actu-card-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M17 7H9M17 7V15" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
 
         </div>
-        <p class="actu-source">Source : notaire.be &mdash; Fédération Royale du Notariat Belge</p>
+        <p class="actu-source" data-i18n="home.actu.source">Source : notaire.be &mdash; Fédération Royale du Notariat Belge</p>
       </div>
 
     </div>
@@ -232,9 +237,9 @@
   <div class="property-bg" role="img" aria-label="Maison à vendre à Schaerbeek"></div>
   <div class="property-content">
     <div class="property-box">
-      <h2>Les mises en vente du notaire Borremans : ventes publiques et de gré à gré.</h2>
-      <p>Découvrez notre sélection de propriétés à Schaerbeek et ses environs. Ventes publiques et de gré à gré, accompagnement juridique complet par notre étude notariale.</p>
-      <a href="biens-a-vendre/" class="btn btn-primary">Voir nos biens</a>
+      <h2 data-i18n="home.prop.h2">Les mises en vente du notaire Borremans : ventes publiques et de gré à gré.</h2>
+      <p data-i18n="home.prop.p">Découvrez notre sélection de propriétés à Schaerbeek et ses environs. Ventes publiques et de gré à gré, accompagnement juridique complet par notre étude notariale.</p>
+      <a href="biens-a-vendre/" class="btn btn-primary" data-i18n="home.prop.cta">Voir nos biens</a>
     </div>
   </div>
 </section>
@@ -257,10 +262,11 @@
   </div>
   <div class="footer-bottom">
     <span>Stephan Borremans Société Notariale</span>
-    <span>&copy; 2026 &mdash; Tous droits réservés</span>
+    <span data-i18n="footer.rights">&copy; 2026 &mdash; Tous droits réservés</span>
   </div>
 </footer>
 
+<script src="/i18n.js"></script>
 <script>
   document.addEventListener('click', function(e) {
     var nav = document.getElementById('nav');
