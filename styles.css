@@ -660,9 +660,12 @@ nav[aria-label="Navigation"] { flex: 1; }
 .footer-logo .brand-mark { width: 32px; height: auto; }
 .footer-logo .brand-name { font-size: 0.62rem; }
 .footer-nav {
-  display: flex;
-  flex-direction: column;
-  gap: 0.45rem;
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  grid-template-rows: repeat(4, auto);
+  grid-auto-flow: column;
+  gap: 0.45rem 2.5rem;
+  align-content: start;
 }
 .footer-nav a {
   font-size: 0.82rem;
