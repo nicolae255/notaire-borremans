@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.notbn.be/sitemap.xml
+Sitemap: https://www.notairebruxelles.be/sitemap.xml
