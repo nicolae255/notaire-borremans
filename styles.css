@@ -601,7 +601,7 @@ nav[aria-label="Navigation"] { flex: 1; }
 .property-bg {
   position: absolute;
   inset: 0;
-  background: url('../img/house.jpg') center/cover no-repeat, linear-gradient(135deg, #e8f4f0 0%, #d0eef5 100%);
+  background: linear-gradient(135deg, #e8f4f0 0%, #d0eef5 100%);
   z-index: 0;
 }
 .property-bg::after {

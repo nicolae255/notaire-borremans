@@ -64,6 +64,9 @@
       'cookie.text': "Ce site utilise des cookies pour améliorer votre expérience de navigation. En cliquant sur Accepter, vous consentez à leur utilisation.",
       'cookie.accept': "Accepter",
       'cookie.decline': "Refuser",
+      'notfound.h1': "Page introuvable",
+      'notfound.p': "La page que vous recherchez n'existe pas ou a été déplacée. Retournez à l'accueil ou consultez nos services.",
+      'notfound.home': "Retour à l'accueil",
 
       'srv.hero.eyebrow': 'Notaire Stephan Borremans &mdash; Schaerbeek',
       'srv.hero.h1': "Nos domaines<br>d'expertise",
@@ -237,6 +240,9 @@
       'cookie.text': "Deze website maakt gebruik van cookies om uw surfervaring te verbeteren. Door op Accepteren te klikken, stemt u in met het gebruik ervan.",
       'cookie.accept': "Accepteren",
       'cookie.decline': "Weigeren",
+      'notfound.h1': "Pagina niet gevonden",
+      'notfound.p': "De pagina die u zoekt bestaat niet of werd verplaatst. Ga terug naar de startpagina of bekijk onze diensten.",
+      'notfound.home': "Terug naar de startpagina",
 
       'srv.hero.eyebrow': 'Notaris Stephan Borremans — Schaarbeek',
       'srv.hero.h1': "Onze expertisedomeinen",
@@ -410,6 +416,9 @@
       'cookie.text': "This website uses cookies to improve your browsing experience. By clicking Accept, you consent to their use.",
       'cookie.accept': "Accept",
       'cookie.decline': "Decline",
+      'notfound.h1': "Page not found",
+      'notfound.p': "The page you are looking for does not exist or has been moved. Go back to the home page or browse our services.",
+      'notfound.home': "Back to home",
 
       'srv.hero.eyebrow': 'Notary Stephan Borremans — Schaerbeek',
       'srv.hero.h1': "Our areas<br>of expertise",
