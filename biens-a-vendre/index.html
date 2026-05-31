@@ -108,51 +108,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Cards grid -->
     <div class="biens-grid" id="biens-grid">
 
-      <!-- Maison, Rixensart, Gré à gré -->
-      <article class="bien-card" data-mode="gg">
-        <a href="https://www.immoweb.be/fr/annonce/maison/a-vendre/rixensart/1332/21497735?s=s_L" target="_blank" rel="noopener noreferrer">
-          <div class="bien-img-wrap">
-            <span class="bien-status en-cours" data-i18n="biens.status">En vente</span>
-            <span class="bien-mode" data-i18n="biens.mode.gg">Gré à gré</span>
-            <picture>
-              <source srcset="../img/biens/maison-rixensart.webp" type="image/webp" />
-              <img src="../img/biens/maison-rixensart.jpg" alt="Maison à Rixensart" fetchpriority="high" />
-            </picture>
-          </div>
-        </a>
+      <!-- Maison, Anderlecht, Vente publique -->
+      <article class="bien-card" data-mode="vp">
+        <div class="bien-img-wrap" style="background:linear-gradient(135deg,#e8f4f0 0%,#d0eef5 100%);display:flex;align-items:center;justify-content:center;min-height:220px">
+          <span class="bien-status en-cours" data-i18n="biens.status">En vente</span>
+          <span class="bien-mode" data-i18n="biens.mode.vp">Vente publique</span>
+          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1" aria-hidden="true">
+            <path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1H4a1 1 0 01-1-1V9.5z" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M9 21V12h6v9" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
         <div class="bien-body">
           <div class="bien-addr">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a8 8 0 0 1 8 8c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 8-8z"/><circle cx="12" cy="10" r="3"/></svg>
-            Rixensart
+            Anderlecht · Rue de la Conciliation 45
           </div>
           <p class="bien-title">Maison</p>
-          <a href="https://www.immoweb.be/fr/annonce/maison/a-vendre/rixensart/1332/21497735?s=s_L" target="_blank" rel="noopener noreferrer" class="bien-link">
-            <span data-i18n="biens.link.immoweb">Voir sur Immoweb</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H9M17 7V15" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-        </div>
-      </article>
-
-      <!-- Appartement, Woluwé-Saint-Lambert, Vente publique -->
-      <article class="bien-card" data-mode="vp">
-        <a href="https://www.biddit.be/nl/catalog/detail/295303" target="_blank" rel="noopener noreferrer">
-          <div class="bien-img-wrap">
-            <span class="bien-status en-cours" data-i18n="biens.status">En vente</span>
-            <span class="bien-mode" data-i18n="biens.mode.vp">Vente publique</span>
-            <picture>
-              <source srcset="../img/biens/appart-woluwe-lambert.webp" type="image/webp" />
-              <img src="../img/biens/appart-woluwe-lambert.jpg" alt="Appartement à Woluwé-Saint-Lambert" loading="lazy" />
-            </picture>
-          </div>
-        </a>
-        <div class="bien-body">
-          <div class="bien-addr">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a8 8 0 0 1 8 8c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 8-8z"/><circle cx="12" cy="10" r="3"/></svg>
-            Woluwé-Saint-Lambert
-          </div>
-          <p class="bien-title">Appartement</p>
-          <a href="https://www.biddit.be/nl/catalog/detail/295303" target="_blank" rel="noopener noreferrer" class="bien-link">
-            <span data-i18n="biens.link.biddit">Voir sur Biddit</span>
+          <a href="../contact/" class="bien-link">
+            <span>Nous contacter</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H9M17 7V15" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
         </div>
