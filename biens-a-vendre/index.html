@@ -110,13 +110,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <!-- Maison, Anderlecht, Vente publique -->
       <article class="bien-card" data-mode="vp">
-        <div class="bien-img-wrap" style="background:linear-gradient(135deg,#e8f4f0 0%,#d0eef5 100%);display:flex;align-items:center;justify-content:center;min-height:220px">
+        <div class="bien-img-wrap">
           <span class="bien-status en-cours" data-i18n="biens.status">En vente</span>
           <span class="bien-mode" data-i18n="biens.mode.vp">Vente publique</span>
-          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1" aria-hidden="true">
-            <path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1H4a1 1 0 01-1-1V9.5z" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M9 21V12h6v9" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
+          <picture>
+            <source srcset="../img/biens/maison-anderlecht.webp" type="image/webp" />
+            <img src="../img/biens/maison-anderlecht.jpg" alt="Maison à Anderlecht" fetchpriority="high" />
+          </picture>
         </div>
         <div class="bien-body">
           <div class="bien-addr">
