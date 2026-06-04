@@ -462,7 +462,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
 
           <!-- Annonce complète FR -->
-          <details class="offre-details">
+          <details class="offre-details" data-offre-lang="fr">
             <summary>Voir l'annonce complète (FR)</summary>
             <div class="offre-full">
               <div class="offre-full-section">
@@ -508,7 +508,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </details>
 
           <!-- Annonce complète NL -->
-          <details class="offre-details">
+          <details class="offre-details" data-offre-lang="nl">
             <summary>Volledige vacature (NL)</summary>
             <div class="offre-full">
               <div class="offre-full-section">
@@ -594,7 +594,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
 
           <!-- Annonce complète FR -->
-          <details class="offre-details">
+          <details class="offre-details" data-offre-lang="fr">
             <summary>Voir l'annonce complète (FR)</summary>
             <div class="offre-full">
               <div class="offre-full-section">
@@ -639,7 +639,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </details>
 
           <!-- Annonce complète NL -->
-          <details class="offre-details">
+          <details class="offre-details" data-offre-lang="nl">
             <summary>Volledige vacature (NL)</summary>
             <div class="offre-full">
               <div class="offre-full-section">
@@ -775,6 +775,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   document.addEventListener('click', function(e) {
     var nav = document.getElementById('nav');
     if (!nav.contains(e.target)) nav.classList.remove('open');
+  });
+
+  // Show/hide FR vs NL job details based on active language
+  function updateOffreDetails(lang) {
+    document.querySelectorAll('[data-offre-lang]').forEach(function(el) {
+      var show = el.dataset.offreLang === lang || (lang !== 'nl' && el.dataset.offreLang === 'fr');
+      el.style.display = show ? '' : 'none';
+      if (!show) el.removeAttribute('open');
+    });
+  }
+  var initLang = localStorage.getItem('lang') || 'fr';
+  updateOffreDetails(initLang);
+  document.querySelectorAll('.lang-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      updateOffreDetails(btn.dataset.lang);
+    });
   });
 </script>
 </body>
