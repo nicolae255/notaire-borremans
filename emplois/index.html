@@ -259,6 +259,45 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     background: var(--teal-dark);
   }
 
+  /* Details/summary expand */
+  .offre-details { border-top: 1px solid var(--line); margin-top: 1.75rem; }
+  .offre-details summary {
+    cursor: pointer;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--teal);
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1.1rem 0;
+    user-select: none;
+  }
+  .offre-details summary::-webkit-details-marker { display: none; }
+  .offre-details summary::after { content: '↓'; display: inline-block; transition: transform 0.2s; }
+  .offre-details[open] summary::after { transform: rotate(180deg); }
+  .offre-full { padding-bottom: 1.5rem; }
+  .offre-full-section { margin-bottom: 1.5rem; }
+  .offre-full-section h4 {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin: 0 0 0.75rem;
+  }
+  .offre-full-section p,
+  .offre-full-section li {
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+  .offre-full-section ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.35rem; }
+  .offre-full-section ul li { display: flex; gap: 0.5rem; }
+  .offre-full-section ul li::before { content: '—'; color: var(--teal); flex-shrink: 0; }
+
   /* Responsive */
   @media (max-width: 900px) {
     .valeurs-grid {
@@ -386,48 +425,265 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <div class="offres-list">
 
-      <!-- Collaborateur(trice) -->
-      <div class="offre-card" style="grid-template-columns:1fr;gap:2rem;align-items:stretch">
+      <!-- ── OFFRE 1 : Collaborateur(trice) ── -->
+      <div class="offre-card" style="grid-template-columns:1fr;align-items:stretch">
         <div class="offre-content">
+
           <div class="offre-meta">
             <span class="offre-badge offre-badge-type">CDI</span>
-            <span class="offre-badge offre-badge-type">Temps plein · 37,5h/sem</span>
+            <span class="offre-badge offre-badge-type">Temps plein · 37,5 h/sem</span>
             <span class="offre-badge offre-badge-lieu">Schaerbeek, 1030</span>
             <span class="offre-badge offre-badge-lieu">Lun–Ven · 10h–18h30</span>
           </div>
           <h3>Collaborateur(trice) — Étude notariale (H/F/X)</h3>
-          <p style="margin-bottom:2rem">Nous recherchons un(e) collaborateur(trice) jeune, motivé(e) et désireux(se) d'apprendre. Les missions sont variées et évoluent selon l'activité : polyvalence, curiosité et envie d'évoluer sont essentielles. Aucune expérience spécifique exigée.</p>
+          <p style="margin-bottom:1.75rem">Nous recherchons un(e) collaborateur(trice) jeune, motivé(e) et désireux(se) d'apprendre et d'ajouter son talent à ceux de notre équipe. Les missions sont variées et évoluent selon l'activité : polyvalence, curiosité et envie d'évoluer sont essentielles. Aucune expérience spécifique exigée.</p>
 
-          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem 2.5rem;margin-bottom:2rem">
-
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem 2.5rem;margin-bottom:1.75rem">
             <div>
               <p style="font-size:0.7rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--teal);margin-bottom:0.75rem">Profil recherché</p>
-              <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.45rem">
-                <li style="font-size:0.85rem;color:var(--muted);display:flex;gap:0.5rem"><span style="color:var(--teal);flex-shrink:0">—</span>Bachelier minimum (orientation juridique appréciée)</li>
-                <li style="font-size:0.85rem;color:var(--muted);display:flex;gap:0.5rem"><span style="color:var(--teal);flex-shrink:0">—</span>Néerlandais oral et écrit <strong style="color:var(--ink)">très apprécié</strong> (pas indispensable)</li>
+              <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.4rem">
+                <li style="font-size:0.85rem;color:var(--muted);display:flex;gap:0.5rem"><span style="color:var(--teal);flex-shrink:0">—</span>Bachelier minimum (juridique apprécié)</li>
+                <li style="font-size:0.85rem;color:var(--muted);display:flex;gap:0.5rem"><span style="color:var(--teal);flex-shrink:0">—</span>Néerlandais <strong style="color:var(--ink)">très apprécié</strong>, pas indispensable</li>
                 <li style="font-size:0.85rem;color:var(--muted);display:flex;gap:0.5rem"><span style="color:var(--teal);flex-shrink:0">—</span>Maîtrise Office (Word, Excel, Outlook)</li>
-                <li style="font-size:0.85rem;color:var(--muted);display:flex;gap:0.5rem"><span style="color:var(--teal);flex-shrink:0">—</span>Curiosité pour les outils numériques &amp; IA</li>
-                <li style="font-size:0.85rem;color:var(--muted);display:flex;gap:0.5rem"><span style="color:var(--teal);flex-shrink:0">—</span>Excellent sens du contact, rigueur, discrétion</li>
+                <li style="font-size:0.85rem;color:var(--muted);display:flex;gap:0.5rem"><span style="color:var(--teal);flex-shrink:0">—</span>Curiosité pour le numérique &amp; l'IA</li>
+                <li style="font-size:0.85rem;color:var(--muted);display:flex;gap:0.5rem"><span style="color:var(--teal);flex-shrink:0">—</span>Rigueur, sens du contact, esprit d'équipe</li>
               </ul>
             </div>
-
             <div>
               <p style="font-size:0.7rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--teal);margin-bottom:0.75rem">Nos avantages</p>
-              <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.45rem">
-                <li style="font-size:0.85rem;color:var(--muted);display:flex;gap:0.5rem"><span style="color:var(--teal);flex-shrink:0">—</span>Salaire compétitif aligné sur le marché</li>
+              <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.4rem">
+                <li style="font-size:0.85rem;color:var(--muted);display:flex;gap:0.5rem"><span style="color:var(--teal);flex-shrink:0">—</span>Salaire compétitif, aligné sur le marché</li>
                 <li style="font-size:0.85rem;color:var(--muted);display:flex;gap:0.5rem"><span style="color:var(--teal);flex-shrink:0">—</span>Chèques-repas &amp; éco-chèques</li>
                 <li style="font-size:0.85rem;color:var(--muted);display:flex;gap:0.5rem"><span style="color:var(--teal);flex-shrink:0">—</span>Intervention dans les frais de transport</li>
                 <li style="font-size:0.85rem;color:var(--muted);display:flex;gap:0.5rem"><span style="color:var(--teal);flex-shrink:0">—</span>Assurance hospitalisation</li>
-                <li style="font-size:0.85rem;color:var(--muted);display:flex;gap:0.5rem"><span style="color:var(--teal);flex-shrink:0">—</span>Cadre de travail agréable et apprentissage continu</li>
+                <li style="font-size:0.85rem;color:var(--muted);display:flex;gap:0.5rem"><span style="color:var(--teal);flex-shrink:0">—</span>Cadre de travail agréable, apprentissage continu</li>
               </ul>
             </div>
-
           </div>
 
-          <a href="mailto:tsering.borremans.353696@belnot.be?subject=Candidature%20%E2%80%94%20Collaborateur(trice)%20%C3%89tude%20Notariale&body=Bonjour%2C%0A%0AJe%20vous%20adresse%20ma%20candidature%20pour%20le%20poste%20de%20collaborateur(trice)%20au%20sein%20de%20l'%C3%A9tude%20Borremans.%0A%0AVeuillez%20trouver%20ci-joint%20mon%20CV%20et%20ma%20lettre%20de%20motivation.%0A%0ACordialement%2C" class="btn btn-primary" style="display:inline-flex;align-items:center;gap:0.6rem">
+          <!-- Annonce complète FR -->
+          <details class="offre-details">
+            <summary>Voir l'annonce complète (FR)</summary>
+            <div class="offre-full">
+              <div class="offre-full-section">
+                <h4>Le poste</h4>
+                <p>Nous recherchons un(e) collaborateur(trice) jeune, motivé(e) et désireux(se) d'apprendre et d'ajouter son talent à ceux de notre équipe. Au sein d'une étude notariale, les missions sont variées et évoluent selon l'activité : nous cherchons quelqu'un de polyvalent, capable de s'adapter à différentes tâches selon les besoins de l'étude. La curiosité, la flexibilité et l'envie d'évoluer sont essentielles.</p>
+              </div>
+              <div class="offre-full-section">
+                <h4>Profil recherché</h4>
+                <ul>
+                  <li><strong>Formation :</strong> Bachelier minimum — une orientation juridique est appréciée</li>
+                  <li><strong>Langues :</strong> Néerlandais oral et écrit très apprécié (pas indispensable)</li>
+                  <li><strong>Technologie :</strong> Bonne maîtrise de la suite Office (Word, Excel, Outlook)</li>
+                  <li><strong>Curiosité technologique :</strong> Intérêt marqué pour les nouvelles tendances et les outils numériques, notamment l'usage de l'intelligence artificielle pour optimiser ses tâches au quotidien. Nous valorisons les profils qui cherchent à travailler plus intelligemment, pas seulement plus dur.</li>
+                  <li><strong>Relationnel :</strong> Excellent sens du contact, aisance avec la clientèle</li>
+                  <li><strong>Présentation :</strong> Soignée et professionnelle</li>
+                  <li><strong>Expérience :</strong> Pas d'expérience spécifique exigée — une première expérience en contact clientèle ou en secrétariat est un plus</li>
+                  <li><strong>Savoir-être :</strong> Rigueur, autonomie, bon sens, sens des responsabilités, esprit d'équipe, envie d'apprendre</li>
+                </ul>
+              </div>
+              <div class="offre-full-section">
+                <h4>Conditions</h4>
+                <ul>
+                  <li><strong>Contrat :</strong> CDI</li>
+                  <li><strong>Temps de travail :</strong> 37,5 h/semaine — du lundi au vendredi, 10h00 – 18h30</li>
+                  <li><strong>Lieu :</strong> Avenue Adolphe Lacomblé 29, 1030 Schaerbeek</li>
+                </ul>
+              </div>
+              <div class="offre-full-section">
+                <h4>Nos avantages</h4>
+                <ul>
+                  <li>Salaire compétitif aligné sur le marché</li>
+                  <li>Chèques-repas et éco-chèques</li>
+                  <li>Intervention dans les frais de transport (transports en commun ou carburant)</li>
+                  <li>Assurance hospitalisation</li>
+                  <li>Cadre de travail agréable et apprentissage continu au sein d'une étude reconnue</li>
+                </ul>
+              </div>
+              <div class="offre-full-section">
+                <h4>Procédure de candidature</h4>
+                <p>Nous accordons une attention particulière à chaque candidature. Les profils retenus seront contactés pour un entretien dans les deux semaines suivant la réception du dossier.</p>
+              </div>
+            </div>
+          </details>
+
+          <!-- Annonce complète NL -->
+          <details class="offre-details">
+            <summary>Volledige vacature (NL)</summary>
+            <div class="offre-full">
+              <div class="offre-full-section">
+                <h4>De functie</h4>
+                <p>Wij zoeken een jonge, gemotiveerde medewerk(st)er, leergierig en bereid om zijn/haar talent aan dat van ons team toe te voegen. Binnen een notariskantoor zijn de taken gevarieerd en evolueren ze naargelang de activiteit. Nieuwsgierigheid, flexibiliteit en de wil om te groeien zijn essentieel.</p>
+              </div>
+              <div class="offre-full-section">
+                <h4>Gezocht profiel</h4>
+                <ul>
+                  <li><strong>Opleiding:</strong> Minimaal bachelor — een juridische richting is een pluspunt</li>
+                  <li><strong>Talen:</strong> Nederlands mondeling en schriftelijk sterk gewaardeerd (niet verplicht)</li>
+                  <li><strong>Technologie:</strong> Goede beheersing van Office (Word, Excel, Outlook)</li>
+                  <li><strong>Technologische nieuwsgierigheid:</strong> Uitgesproken interesse in digitale tools en artificiële intelligentie. Wij waarderen profielen die slimmer willen werken, niet alleen harder.</li>
+                  <li><strong>Relationeel:</strong> Uitstekende contactvaardigheden, vlot in de omgang met cliënten</li>
+                  <li><strong>Presentatie:</strong> Verzorgd en professioneel</li>
+                  <li><strong>Ervaring:</strong> Geen specifieke ervaring vereist — een eerste ervaring in klantencontact of secretariaat is een pluspunt</li>
+                  <li><strong>Persoonlijkheid:</strong> Nauwkeurigheid, autonomie, gezond verstand, verantwoordelijkheidszin, teamspirit, leergierigheid</li>
+                </ul>
+              </div>
+              <div class="offre-full-section">
+                <h4>Voorwaarden</h4>
+                <ul>
+                  <li><strong>Contract:</strong> Contract van onbepaalde duur</li>
+                  <li><strong>Werktijd:</strong> 37,5 u/week — van maandag tot vrijdag, 10u00 – 18u30</li>
+                  <li><strong>Plaats:</strong> Adolphe Lacomblélaan 29, 1030 Schaarbeek</li>
+                </ul>
+              </div>
+              <div class="offre-full-section">
+                <h4>Onze voordelen</h4>
+                <ul>
+                  <li>Competitief salaris, marktconform</li>
+                  <li>Maaltijdcheques en ecocheques</li>
+                  <li>Tussenkomst in de vervoerskosten (openbaar vervoer of brandstof)</li>
+                  <li>Hospitalisatieverzekering</li>
+                  <li>Aangename werkomgeving en voortdurend leren binnen een gerenommeerd kantoor</li>
+                </ul>
+              </div>
+            </div>
+          </details>
+
+          <a href="mailto:tsering.borremans.353696@belnot.be?subject=Candidature%20%E2%80%94%20Collaborateur(trice)%20%C3%89tude%20Notariale&body=Bonjour%2C%0A%0AJe%20vous%20adresse%20ma%20candidature%20pour%20le%20poste%20de%20collaborateur(trice)%20au%20sein%20de%20l'%C3%A9tude%20Borremans.%0A%0AVeuillez%20trouver%20ci-joint%20mon%20CV%20et%20ma%20lettre%20de%20motivation.%0A%0ACordialement%2C" class="btn btn-primary" style="display:inline-flex;align-items:center;gap:0.6rem;margin-top:1.75rem">
             <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
             Postuler maintenant
           </a>
+
+        </div>
+      </div>
+
+      <!-- ── OFFRE 2 : Candidat(e)-notaire ── -->
+      <div class="offre-card" style="grid-template-columns:1fr;align-items:stretch">
+        <div class="offre-content">
+
+          <div class="offre-meta">
+            <span class="offre-badge offre-badge-type">CDI</span>
+            <span class="offre-badge offre-badge-type">Temps plein · 37,5 h/sem</span>
+            <span class="offre-badge offre-badge-lieu">Schaerbeek, 1030</span>
+            <span class="offre-badge offre-badge-lieu">Master en droit requis</span>
+          </div>
+          <h3>Candidat(e)-notaire — orientation notariat (H/F/X)</h3>
+          <p style="margin-bottom:1.75rem">Notaire expérimenté ayant déjà formé de nombreux stagiaires — dont <strong style="color:var(--ink)">8 sont aujourd'hui devenus notaires</strong> — engage un(e) jeune diplômé(e) motivé(e) à l'idée de devenir notaire. Vous serez progressivement amené(e) à prendre en charge des dossiers et à monter en autonomie, dans la perspective d'un véritable parcours vers le notariat.</p>
+
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem 2.5rem;margin-bottom:1.75rem">
+            <div>
+              <p style="font-size:0.7rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--teal);margin-bottom:0.75rem">Profil recherché</p>
+              <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.4rem">
+                <li style="font-size:0.85rem;color:var(--muted);display:flex;gap:0.5rem"><span style="color:var(--teal);flex-shrink:0">—</span>Master en droit + master spécialisation notariat</li>
+                <li style="font-size:0.85rem;color:var(--muted);display:flex;gap:0.5rem"><span style="color:var(--teal);flex-shrink:0">—</span>Bilingue FR / NL <strong style="color:var(--ink)">(indispensable)</strong></li>
+                <li style="font-size:0.85rem;color:var(--muted);display:flex;gap:0.5rem"><span style="color:var(--teal);flex-shrink:0">—</span>Maîtrise Office (Word, Excel, Outlook)</li>
+                <li style="font-size:0.85rem;color:var(--muted);display:flex;gap:0.5rem"><span style="color:var(--teal);flex-shrink:0">—</span>Réelle volonté de s'engager dans la voie du notariat</li>
+                <li style="font-size:0.85rem;color:var(--muted);display:flex;gap:0.5rem"><span style="color:var(--teal);flex-shrink:0">—</span>Rigueur, autonomie, sens des responsabilités</li>
+              </ul>
+            </div>
+            <div>
+              <p style="font-size:0.7rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--teal);margin-bottom:0.75rem">Nos avantages</p>
+              <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.4rem">
+                <li style="font-size:0.85rem;color:var(--muted);display:flex;gap:0.5rem"><span style="color:var(--teal);flex-shrink:0">—</span>Salaire compétitif, aligné sur le marché</li>
+                <li style="font-size:0.85rem;color:var(--muted);display:flex;gap:0.5rem"><span style="color:var(--teal);flex-shrink:0">—</span>Chèques-repas &amp; éco-chèques</li>
+                <li style="font-size:0.85rem;color:var(--muted);display:flex;gap:0.5rem"><span style="color:var(--teal);flex-shrink:0">—</span>Intervention dans les frais de transport</li>
+                <li style="font-size:0.85rem;color:var(--muted);display:flex;gap:0.5rem"><span style="color:var(--teal);flex-shrink:0">—</span>Assurance hospitalisation</li>
+                <li style="font-size:0.85rem;color:var(--muted);display:flex;gap:0.5rem"><span style="color:var(--teal);flex-shrink:0">—</span>Accompagnement personnalisé vers la carrière notariale</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Annonce complète FR -->
+          <details class="offre-details">
+            <summary>Voir l'annonce complète (FR)</summary>
+            <div class="offre-full">
+              <div class="offre-full-section">
+                <h4>Le poste</h4>
+                <p>Notaire expérimenté ayant déjà formé de nombreux stagiaires — dont <strong>8 sont aujourd'hui devenus notaires</strong> — engage un(e) jeune diplômé(e) motivé(e) à l'idée de devenir notaire. Nous recherchons une personne qui se projette dans le métier : ambitieuse, désireuse d'apprendre auprès d'un notaire qui s'investit dans la formation de ses collaborateurs, et déterminée à construire sa carrière dans le notariat. Vous serez progressivement amené(e) à prendre en charge des dossiers et à monter en autonomie, dans la perspective d'un véritable parcours vers le notariat.</p>
+              </div>
+              <div class="offre-full-section">
+                <h4>Profil recherché</h4>
+                <ul>
+                  <li><strong>Formation :</strong> Master en droit, complété par le master de spécialisation en notariat</li>
+                  <li><strong>Langues :</strong> Bilingue français / néerlandais, à l'oral comme à l'écrit (indispensable)</li>
+                  <li><strong>Technologie :</strong> Bonne maîtrise de la suite Office (Word, Excel, Outlook)</li>
+                  <li><strong>Motivation :</strong> Réelle volonté de s'engager dans la voie du notariat et de s'investir sur le long terme</li>
+                  <li><strong>Relationnel :</strong> Excellent sens du contact, aisance avec la clientèle</li>
+                  <li><strong>Présentation :</strong> Soignée et professionnelle</li>
+                  <li><strong>Savoir-être :</strong> Rigueur, autonomie, bon sens, sens des responsabilités, esprit d'équipe</li>
+                </ul>
+              </div>
+              <div class="offre-full-section">
+                <h4>Conditions</h4>
+                <ul>
+                  <li><strong>Contrat :</strong> CDI</li>
+                  <li><strong>Temps de travail :</strong> 37,5 h/semaine — du lundi au vendredi, 10h00 – 18h30</li>
+                  <li><strong>Lieu :</strong> Avenue Adolphe Lacomblé 29, 1030 Schaerbeek</li>
+                </ul>
+              </div>
+              <div class="offre-full-section">
+                <h4>Nos avantages</h4>
+                <ul>
+                  <li>Salaire compétitif aligné sur le marché</li>
+                  <li>Chèques-repas et éco-chèques</li>
+                  <li>Intervention dans les frais de transport (transports en commun ou carburant)</li>
+                  <li>Assurance hospitalisation</li>
+                  <li>Un accompagnement personnalisé par un notaire investi dans la formation, dans la perspective d'une carrière notariale</li>
+                </ul>
+              </div>
+              <div class="offre-full-section">
+                <h4>Procédure de candidature</h4>
+                <p>Nous accordons une attention particulière à chaque candidature. Les profils retenus seront contactés pour un entretien dans les deux semaines suivant la réception du dossier.</p>
+              </div>
+            </div>
+          </details>
+
+          <!-- Annonce complète NL -->
+          <details class="offre-details">
+            <summary>Volledige vacature (NL)</summary>
+            <div class="offre-full">
+              <div class="offre-full-section">
+                <h4>De functie</h4>
+                <p>Ervaren notaris die reeds talrijke stagiairs heeft opgeleid — waarvan er <strong>8 vandaag notaris zijn geworden</strong> — zoekt een jonge, gemotiveerde afgestudeerde met de ambitie om notaris te worden. U zult geleidelijk aan dossiers leren beheren en zelfstandiger worden, met het oog op een echt traject richting het notariaat.</p>
+              </div>
+              <div class="offre-full-section">
+                <h4>Gezocht profiel</h4>
+                <ul>
+                  <li><strong>Opleiding:</strong> Master in de rechten, aangevuld met de master in het notariaat</li>
+                  <li><strong>Talen:</strong> Nederlandstalig, zowel mondeling als schriftelijk (vereist)</li>
+                  <li><strong>Technologie:</strong> Goede beheersing van Office (Word, Excel, Outlook)</li>
+                  <li><strong>Motivatie:</strong> Echte wil om de weg naar het notariaat in te slaan en zich op lange termijn te engageren</li>
+                  <li><strong>Relationeel:</strong> Uitstekende contactvaardigheden, vlot in de omgang met cliënten</li>
+                  <li><strong>Presentatie:</strong> Verzorgd en professioneel</li>
+                  <li><strong>Persoonlijkheid:</strong> Nauwkeurigheid, autonomie, gezond verstand, verantwoordelijkheidszin, teamspirit</li>
+                </ul>
+              </div>
+              <div class="offre-full-section">
+                <h4>Voorwaarden</h4>
+                <ul>
+                  <li><strong>Contract:</strong> Contract van onbepaalde duur</li>
+                  <li><strong>Werktijd:</strong> 37,5 u/week — van maandag tot vrijdag, 10u00 – 18u30</li>
+                  <li><strong>Plaats:</strong> Adolphe Lacomblélaan 29, 1030 Schaarbeek</li>
+                </ul>
+              </div>
+              <div class="offre-full-section">
+                <h4>Onze voordelen</h4>
+                <ul>
+                  <li>Competitief salaris, marktconform</li>
+                  <li>Maaltijdcheques en ecocheques</li>
+                  <li>Tussenkomst in de vervoerskosten (openbaar vervoer of brandstof)</li>
+                  <li>Hospitalisatieverzekering</li>
+                  <li>Een persoonlijke begeleiding door een notaris die investeert in opleiding, met het oog op een notariële carrière</li>
+                </ul>
+              </div>
+            </div>
+          </details>
+
+          <a href="mailto:tsering.borremans.353696@belnot.be?subject=Candidature%20%E2%80%94%20Candidat(e)-notaire&body=Bonjour%2C%0A%0AJe%20vous%20adresse%20ma%20candidature%20pour%20le%20poste%20de%20candidat(e)-notaire%20au%20sein%20de%20l'%C3%A9tude%20Borremans.%0A%0AVeuillez%20trouver%20ci-joint%20mon%20CV%20et%20ma%20lettre%20de%20motivation.%0A%0ACordialement%2C" class="btn btn-primary" style="display:inline-flex;align-items:center;gap:0.6rem;margin-top:1.75rem">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            Postuler maintenant
+          </a>
+
         </div>
       </div>
 
