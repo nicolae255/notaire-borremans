@@ -66,7 +66,7 @@
       width: 40px; height: 40px; border-radius: 50%; background: rgba(255,255,255,0.2);
       display: flex; align-items: center; justify-content: center; flex-shrink: 0;
     }
-    .cb-header-info h3 { font-size: 0.9rem; font-weight: 600; margin: 0; }
+    .cb-header-info h3 { font-size: 0.9rem; font-weight: 600; margin: 0; color: #fff !important; }
     .cb-header-info p { font-size: 0.72rem; opacity: 0.8; margin: 2px 0 0; }
     .cb-status { width: 8px; height: 8px; background: #4ade80; border-radius: 50%; display: inline-block; margin-right: 4px; vertical-align: middle; }
     .cb-msgs { flex: 1; overflow-y: auto; padding: 1.25rem; display: flex; flex-direction: column; gap: 0.85rem; background: #f8fbfc; }
