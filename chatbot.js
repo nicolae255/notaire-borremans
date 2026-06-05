@@ -52,6 +52,10 @@
     'display:flex;align-items:center;justify-content:center;flex-shrink:0;}',
     '.cb-header-info h3{font-size:0.9rem;font-weight:600;margin:0;color:#fff!important;}',
     '.cb-header-info p{font-size:0.72rem;opacity:0.8;margin:2px 0 0;color:#fff!important;}',
+    '#cb-close{margin-left:auto;background:rgba(255,255,255,0.15);border:none;border-radius:50%;',
+    'width:30px;height:30px;display:flex;align-items:center;justify-content:center;',
+    'cursor:pointer;color:#fff;flex-shrink:0;transition:background 0.15s;}',
+    '#cb-close:hover{background:rgba(255,255,255,0.3);}',
     '.cb-status{width:8px;height:8px;background:#4ade80;border-radius:50%;',
     'display:inline-block;margin-right:4px;vertical-align:middle;}',
     '.cb-msgs{flex:1;overflow-y:auto;padding:1.25rem;display:flex;flex-direction:column;',
@@ -133,6 +137,9 @@
             '<h3>Étude Borremans</h3>' +
             '<p><span class="cb-status"></span>En ligne · Réponse dans les plus brefs délais</p>' +
           '</div>' +
+          '<button id="cb-close" type="button" aria-label="Fermer le chat">' +
+            '<svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>' +
+          '</button>' +
         '</div>' +
         '<div class="cb-msgs" id="cb-msgs"></div>' +
         '<div class="cb-footer" id="cb-footer"></div>' +
@@ -169,6 +176,8 @@
       e.stopPropagation();
       dismissTeaser();
     });
+
+    document.getElementById('cb-close').addEventListener('click', closeChat);
 
     teaser.addEventListener('click', function () {
       openChat();
