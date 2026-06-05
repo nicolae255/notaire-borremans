@@ -124,7 +124,7 @@
         </div>
         <div class="cb-header-info">
           <h3>Étude Borremans</h3>
-          <p><span class="cb-status"></span>En ligne · Réponse sous 24h</p>
+          <p><span class="cb-status"></span>En ligne · Réponse dans les plus brefs délais</p>
         </div>
       </div>
       <div class="cb-msgs" id="cb-msgs"></div>
@@ -269,7 +269,7 @@
         setFooter(
           '<div class="cb-success">' +
             '<div class="cb-success-icon"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>' +
-            '<h4>Demande envoyée</h4><p>Réponse sous 24h ouvrables.</p>' +
+            '<h4>Demande envoyée</h4><p>Nous vous répondrons dans les plus brefs délais.</p>' +
           '</div>'
         );
       });
