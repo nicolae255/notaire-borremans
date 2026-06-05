@@ -31,6 +31,28 @@
     @keyframes cb-pulse {
       0%,100% { transform: scale(1); } 50% { transform: scale(1.25); }
     }
+    #cb-teaser {
+      position: fixed; bottom: 5.2rem; right: 1.75rem;
+      background: #fff; color: #1a2b2e;
+      padding: 0.75rem 1rem 0.75rem 1rem;
+      border-radius: 12px 12px 4px 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.13);
+      font-size: 0.875rem; font-family: 'Inter', sans-serif; line-height: 1.4;
+      max-width: 220px; z-index: 9997; cursor: pointer;
+      display: flex; align-items: center; gap: 0.5rem;
+      opacity: 0; transform: translateY(8px) scale(0.95);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      pointer-events: none;
+    }
+    #cb-teaser.visible { opacity: 1; transform: translateY(0) scale(1); pointer-events: all; }
+    #cb-teaser-close {
+      position: absolute; top: -6px; left: -6px;
+      width: 18px; height: 18px; border-radius: 50%;
+      background: #9bbfc4; color: #fff; border: none; cursor: pointer;
+      font-size: 10px; display: flex; align-items: center; justify-content: center;
+      line-height: 1;
+    }
+    #cb-teaser-close:hover { background: #5a7a80; }
     #cb-window {
       position: fixed; bottom: 5.5rem; right: 1.75rem;
       width: 360px; max-height: 540px; background: #fff;
@@ -141,6 +163,10 @@
 
   // ── Inject HTML ─────────────────────────────────────────────────
   var html = `
+    <div id="cb-teaser">
+      <button id="cb-teaser-close" aria-label="Fermer">✕</button>
+      Bonjour 👋 Comment pouvons-nous vous aider ?
+    </div>
     <button id="cb-bubble" aria-label="Ouvrir le chat">
       <svg class="cb-ico-chat" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
         <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
@@ -179,10 +205,28 @@
   var userEmail = '';
   var userTopic = '';
 
+  // Proactive teaser — appears after 3s, dismissed once per session
+  var teaser = document.getElementById('cb-teaser');
+  if (!sessionStorage.getItem('cb-teaser-seen')) {
+    setTimeout(function () { teaser.classList.add('visible'); }, 3000);
+  }
+  function dismissTeaser() {
+    teaser.classList.remove('visible');
+    sessionStorage.setItem('cb-teaser-seen', '1');
+  }
+  document.getElementById('cb-teaser-close').addEventListener('click', function (e) {
+    e.stopPropagation(); dismissTeaser();
+  });
+  teaser.addEventListener('click', function () {
+    dismissTeaser();
+    document.getElementById('cb-bubble').click();
+  });
+
   document.getElementById('cb-bubble').addEventListener('click', function () {
     var bubble = document.getElementById('cb-bubble');
     var win    = document.getElementById('cb-window');
     var isOpen = win.classList.contains('open');
+    dismissTeaser();
     bubble.classList.toggle('open', !isOpen);
     win.classList.toggle('open', !isOpen);
     if (!isOpen && state === 'idle') startChat();
