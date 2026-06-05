@@ -1,0 +1,331 @@
+(function () {
+  'use strict';
+
+  var EMAILJS_PUBLIC_KEY  = 'g7_awUpVEpp6pyQes';
+  var EMAILJS_SERVICE_ID  = 'service_96r0axe';
+  var EMAILJS_TEMPLATE_ID = 'template_ulhv3uq';
+  var OFFICE_EMAIL        = 'nicolascojocari@yahoo.fr';
+
+  // ── Inject CSS ──────────────────────────────────────────────────
+  var style = document.createElement('style');
+  style.textContent = `
+    #cb-bubble {
+      position: fixed; bottom: 1.75rem; right: 1.75rem;
+      width: 56px; height: 56px; border-radius: 50%;
+      background: #00B4CC; color: #fff; border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 20px rgba(0,180,204,0.4);
+      transition: background 0.2s, transform 0.2s; z-index: 9999;
+    }
+    #cb-bubble:hover { background: #009db3; transform: scale(1.08); }
+    #cb-bubble .cb-ico-chat, #cb-bubble .cb-ico-close { transition: opacity 0.2s; }
+    #cb-bubble .cb-ico-close { display: none; }
+    #cb-bubble.open .cb-ico-chat { display: none; }
+    #cb-bubble.open .cb-ico-close { display: flex; }
+    #cb-bubble::after {
+      content: ''; position: absolute; top: 3px; right: 3px;
+      width: 12px; height: 12px; background: #ff5c5c;
+      border-radius: 50%; border: 2px solid #fff; animation: cb-pulse 2s infinite;
+    }
+    #cb-bubble.open::after { display: none; }
+    @keyframes cb-pulse {
+      0%,100% { transform: scale(1); } 50% { transform: scale(1.25); }
+    }
+    #cb-window {
+      position: fixed; bottom: 5.5rem; right: 1.75rem;
+      width: 360px; max-height: 540px; background: #fff;
+      border-radius: 12px; box-shadow: 0 12px 48px rgba(0,0,0,0.15);
+      display: flex; flex-direction: column; overflow: hidden; z-index: 9998;
+      transform: scale(0.92) translateY(12px); opacity: 0; pointer-events: none;
+      transition: transform 0.22s cubic-bezier(.34,1.46,.64,1), opacity 0.18s ease;
+      transform-origin: bottom right; font-family: 'Inter', sans-serif;
+    }
+    #cb-window.open { transform: scale(1) translateY(0); opacity: 1; pointer-events: all; }
+    .cb-header {
+      background: linear-gradient(135deg, #00B4CC 0%, #0091a8 100%);
+      color: #fff; padding: 1.1rem 1.25rem;
+      display: flex; align-items: center; gap: 0.85rem; flex-shrink: 0;
+    }
+    .cb-avatar {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: rgba(255,255,255,0.2);
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .cb-header-info h3 { font-size: 0.9rem; font-weight: 600; margin: 0; }
+    .cb-header-info p { font-size: 0.72rem; opacity: 0.8; margin: 2px 0 0; }
+    .cb-status {
+      width: 8px; height: 8px; background: #4ade80;
+      border-radius: 50%; display: inline-block; margin-right: 4px; vertical-align: middle;
+    }
+    .cb-msgs {
+      flex: 1; overflow-y: auto; padding: 1.25rem;
+      display: flex; flex-direction: column; gap: 0.85rem; background: #f8fbfc;
+    }
+    .cb-msgs::-webkit-scrollbar { width: 4px; }
+    .cb-msgs::-webkit-scrollbar-thumb { background: #c8dde1; border-radius: 2px; }
+    .cb-msg { display: flex; gap: 0.6rem; align-items: flex-end; animation: cb-up 0.22s ease; }
+    @keyframes cb-up { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:translateY(0); } }
+    .cb-msg-av {
+      width: 28px; height: 28px; border-radius: 50%; background: #00B4CC; color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.62rem; font-weight: 700; flex-shrink: 0; font-family: 'Inter', sans-serif;
+    }
+    .cb-msg-bbl {
+      max-width: 78%; padding: 0.65rem 0.9rem;
+      border-radius: 14px 14px 14px 4px; font-size: 0.845rem; line-height: 1.55;
+      background: #fff; color: #1a2b2e; box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+      font-family: 'Inter', sans-serif;
+    }
+    .cb-msg.user { flex-direction: row-reverse; }
+    .cb-msg.user .cb-msg-bbl { background: #00B4CC; color: #fff; border-radius: 14px 14px 4px 14px; }
+    .cb-msg.user .cb-msg-av { background: #e4f4f8; color: #00B4CC; }
+    .cb-dots { display: flex; gap: 4px; align-items: center; padding: 2px 4px; }
+    .cb-dots span {
+      width: 6px; height: 6px; background: #9bbfc4; border-radius: 50%;
+      animation: cb-blink 1.2s infinite;
+    }
+    .cb-dots span:nth-child(2) { animation-delay: 0.2s; }
+    .cb-dots span:nth-child(3) { animation-delay: 0.4s; }
+    @keyframes cb-blink { 0%,80%,100%{opacity:.3;transform:scale(1);} 40%{opacity:1;transform:scale(1.2);} }
+    .cb-footer {
+      padding: 0.85rem 1rem; background: #fff; border-top: 1px solid #e4eef0; flex-shrink: 0;
+    }
+    .cb-step-email { display: flex; gap: 0.5rem; }
+    .cb-step-email input {
+      flex: 1; border: 1px solid #c8dde1; border-radius: 8px;
+      padding: 0.6rem 0.85rem; font-size: 0.845rem; font-family: 'Inter', sans-serif;
+      color: #1a2b2e; outline: none; transition: border-color 0.15s;
+    }
+    .cb-step-email input:focus { border-color: #00B4CC; }
+    .cb-step-email input::placeholder { color: #9bbfc4; }
+    .cb-step-msg { display: flex; flex-direction: column; gap: 0.5rem; }
+    .cb-step-msg textarea {
+      border: 1px solid #c8dde1; border-radius: 8px; padding: 0.6rem 0.85rem;
+      font-size: 0.845rem; font-family: 'Inter', sans-serif; color: #1a2b2e;
+      resize: none; outline: none; line-height: 1.5; height: 80px;
+      transition: border-color 0.15s;
+    }
+    .cb-step-msg textarea:focus { border-color: #00B4CC; }
+    .cb-step-msg textarea::placeholder { color: #9bbfc4; }
+    .cb-step-msg-row { display: flex; justify-content: flex-end; }
+    .cb-btn {
+      background: #00B4CC; color: #fff; border: none; border-radius: 8px;
+      padding: 0.55rem 1rem; font-size: 0.78rem; font-weight: 700;
+      letter-spacing: 0.06em; text-transform: uppercase; cursor: pointer;
+      display: flex; align-items: center; gap: 0.4rem; transition: background 0.15s;
+      font-family: 'Inter', sans-serif;
+    }
+    .cb-btn:hover { background: #009db3; }
+    .cb-quick { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.5rem; }
+    .cb-chip {
+      font-size: 0.72rem; font-weight: 500; padding: 0.3rem 0.65rem;
+      border: 1px solid #c8dde1; border-radius: 20px; cursor: pointer;
+      background: #fff; color: #2d6b76; transition: all 0.15s; white-space: nowrap;
+      font-family: 'Inter', sans-serif;
+    }
+    .cb-chip:hover, .cb-chip.selected { border-color: #00B4CC; background: #e4f4f8; color: #00B4CC; }
+    .cb-success { text-align: center; padding: 0.5rem 0; }
+    .cb-success-icon {
+      width: 44px; height: 44px; border-radius: 50%; background: #e8f9ee; color: #22c55e;
+      display: flex; align-items: center; justify-content: center; margin: 0 auto 0.75rem;
+    }
+    .cb-success h4 { font-size: 0.9rem; font-weight: 600; margin: 0 0 0.35rem; font-family: 'Inter', sans-serif; }
+    .cb-success p { font-size: 0.8rem; color: #5a7a80; line-height: 1.5; margin: 0; font-family: 'Inter', sans-serif; }
+    .cb-err { font-size: 0.72rem; color: #ef4444; margin-top: -0.2rem; }
+    @media (max-width: 420px) {
+      #cb-window { width: calc(100vw - 2rem); right: 1rem; }
+      #cb-bubble { right: 1rem; bottom: 1rem; }
+    }
+  `;
+  document.head.appendChild(style);
+
+  // ── Inject HTML ─────────────────────────────────────────────────
+  var html = `
+    <button id="cb-bubble" aria-label="Ouvrir le chat">
+      <svg class="cb-ico-chat" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+      </svg>
+      <svg class="cb-ico-close" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="display:none">
+        <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+      </svg>
+    </button>
+    <div id="cb-window" role="dialog" aria-label="Chat Étude Borremans">
+      <div class="cb-header">
+        <div class="cb-avatar">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+          </svg>
+        </div>
+        <div class="cb-header-info">
+          <h3>Étude Borremans</h3>
+          <p><span class="cb-status"></span>En ligne · Réponse sous 24h</p>
+        </div>
+      </div>
+      <div class="cb-msgs" id="cb-msgs"></div>
+      <div class="cb-footer" id="cb-footer"></div>
+    </div>
+  `;
+  var wrapper = document.createElement('div');
+  wrapper.innerHTML = html;
+  document.body.appendChild(wrapper);
+
+  // ── EmailJS init ────────────────────────────────────────────────
+  if (window.emailjs) {
+    emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+  }
+
+  // ── Logic ───────────────────────────────────────────────────────
+  var state = 'idle';
+  var userEmail = '';
+  var userTopic = '';
+
+  document.getElementById('cb-bubble').addEventListener('click', function () {
+    var bubble = document.getElementById('cb-bubble');
+    var win    = document.getElementById('cb-window');
+    var isOpen = win.classList.contains('open');
+    bubble.classList.toggle('open', !isOpen);
+    win.classList.toggle('open', !isOpen);
+    if (!isOpen && state === 'idle') startChat();
+  });
+
+  function startChat() {
+    state = 'email';
+    addMsg('Bonjour&nbsp;! Bienvenue à l\'étude Borremans.<br>Pour vous répondre, commencez par indiquer votre adresse e-mail.', 'bot', 600)
+      .then(renderEmailStep);
+  }
+
+  function addMsg(text, from, delay) {
+    return new Promise(function (resolve) {
+      var container = document.getElementById('cb-msgs');
+      if (from === 'bot' && delay > 0) {
+        var t = document.createElement('div');
+        t.className = 'cb-msg'; t.id = 'cb-typing';
+        t.innerHTML = '<div class="cb-msg-av">SB</div><div class="cb-msg-bbl"><div class="cb-dots"><span></span><span></span><span></span></div></div>';
+        container.appendChild(t); scrollBot();
+      }
+      setTimeout(function () {
+        var ti = document.getElementById('cb-typing');
+        if (ti) ti.remove();
+        var el = document.createElement('div');
+        el.className = 'cb-msg' + (from === 'user' ? ' user' : '');
+        if (from === 'bot') {
+          el.innerHTML = '<div class="cb-msg-av">SB</div><div class="cb-msg-bbl">' + text + '</div>';
+        } else {
+          el.innerHTML = '<div class="cb-msg-av" style="background:#e4f4f8;color:#00B4CC">Vous</div><div class="cb-msg-bbl">' + text + '</div>';
+        }
+        container.appendChild(el); scrollBot(); resolve();
+      }, delay);
+    });
+  }
+
+  function scrollBot() {
+    var el = document.getElementById('cb-msgs');
+    if (el) el.scrollTop = el.scrollHeight;
+  }
+
+  function setFooter(html) {
+    document.getElementById('cb-footer').innerHTML = html;
+  }
+
+  function renderEmailStep() {
+    setFooter(
+      '<div class="cb-step-email">' +
+        '<input type="email" id="cb-email-input" placeholder="votre@email.com" autocomplete="email"/>' +
+        '<button class="cb-btn" id="cb-email-btn">' +
+          '<svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>' +
+        '</button>' +
+      '</div>'
+    );
+    var inp = document.getElementById('cb-email-input');
+    var btn = document.getElementById('cb-email-btn');
+    if (inp) { inp.focus(); inp.addEventListener('keydown', function (e) { if (e.key === 'Enter') submitEmail(); }); }
+    if (btn) btn.addEventListener('click', submitEmail);
+  }
+
+  function submitEmail() {
+    var inp = document.getElementById('cb-email-input');
+    if (!inp) return;
+    var val = inp.value.trim();
+    if (!val || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)) {
+      inp.style.borderColor = '#ef4444';
+      inp.focus();
+      setTimeout(function () { inp.style.borderColor = ''; }, 1500);
+      return;
+    }
+    userEmail = val;
+    state = 'message';
+    setFooter('');
+    addMsg(val, 'user', 0).then(function () {
+      return addMsg('Merci&nbsp;! Quel est l\'objet de votre demande&nbsp;?', 'bot', 800);
+    }).then(renderMsgStep);
+  }
+
+  function renderMsgStep() {
+    var topics = ['Immobilier', 'Succession', 'Famille', 'Vente publique', 'Entreprise', 'Autre'];
+    var chips = topics.map(function (t) {
+      return '<button class="cb-chip" data-topic="' + t + '">' + t + '</button>';
+    }).join('');
+    setFooter(
+      '<div class="cb-step-msg">' +
+        '<div class="cb-quick">' + chips + '</div>' +
+        '<textarea id="cb-msg-input" placeholder="Décrivez votre demande…"></textarea>' +
+        '<div class="cb-step-msg-row">' +
+          '<button class="cb-btn" id="cb-send-btn">' +
+            '<svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M22 2L11 13"/><path d="M22 2L15 22 11 13 2 9l20-7z"/></svg>' +
+            '&nbsp;Envoyer' +
+          '</button>' +
+        '</div>' +
+      '</div>'
+    );
+    document.querySelectorAll('.cb-chip').forEach(function (c) {
+      c.addEventListener('click', function () {
+        userTopic = c.dataset.topic;
+        document.querySelectorAll('.cb-chip').forEach(function (x) { x.classList.remove('selected'); });
+        c.classList.add('selected');
+        var ta = document.getElementById('cb-msg-input');
+        if (ta && !ta.value) ta.placeholder = 'Votre demande concernant : ' + userTopic + '…';
+      });
+    });
+    var sendBtn = document.getElementById('cb-send-btn');
+    if (sendBtn) sendBtn.addEventListener('click', submitMsg);
+    var ta = document.getElementById('cb-msg-input');
+    if (ta) ta.focus();
+  }
+
+  function submitMsg() {
+    var ta = document.getElementById('cb-msg-input');
+    if (!ta) return;
+    var msg = ta.value.trim();
+    if (!msg) { ta.style.borderColor = '#ef4444'; ta.focus(); setTimeout(function () { ta.style.borderColor = ''; }, 1500); return; }
+    state = 'done';
+    setFooter('');
+    addMsg(msg, 'user', 0).then(function () {
+      sendEmail(userEmail, userTopic || 'Demande générale', msg);
+      return addMsg('Votre message a bien été envoyé&nbsp;! 🎉<br>Notre équipe vous contactera dans les meilleurs délais.', 'bot', 900);
+    }).then(function () {
+      setFooter(
+        '<div class="cb-success">' +
+          '<div class="cb-success-icon"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>' +
+          '<h4>Demande envoyée</h4><p>Réponse sous 24h ouvrables.</p>' +
+        '</div>'
+      );
+    });
+  }
+
+  function sendEmail(email, subject, body) {
+    if (window.emailjs) {
+      emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+        from_email: email,
+        sujet:      subject,
+        message:    body
+      }).catch(function (err) { console.error('EmailJS:', err); });
+    } else {
+      var a = document.createElement('a');
+      a.href = 'mailto:' + OFFICE_EMAIL +
+        '?subject=' + encodeURIComponent('Chat — ' + subject) +
+        '&body=' + encodeURIComponent('De : ' + email + '\n\n' + body);
+      a.style.display = 'none';
+      document.body.appendChild(a); a.click(); document.body.removeChild(a);
+    }
+  }
+})();
