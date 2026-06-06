@@ -2,7 +2,7 @@
   'use strict';
 
   var EMAILJS_PUBLIC_KEY  = 'g7_awUpVEpp6pyQes';
-  var EMAILJS_SERVICE_ID  = 'service_edl0gdl';
+  var EMAILJS_SERVICE_ID  = 'service_nueo66p';
   var EMAILJS_TEMPLATE_ID = 'template_qynq0uj';
   var OFFICE_EMAIL        = 'nicolascojocari@yahoo.fr';
 
