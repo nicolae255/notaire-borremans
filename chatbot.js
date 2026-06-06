@@ -299,7 +299,8 @@
       }
       state = 'done'; setFooter('');
       addMsg(msg, 'user', 0).then(function () {
-        sendEmail(userEmail, userTopic || 'Demande générale', msg);
+        return sendEmail(userEmail, userTopic || 'Demande générale', msg);
+      }).then(function () {
         return addMsg('Votre message a bien été envoyé ! 🎉<br>Notre équipe vous contactera dans les plus brefs délais.', 'bot', 900);
       }).then(function () {
         setFooter(
@@ -309,6 +310,10 @@
             '<p>Nous vous répondrons dans les plus brefs délais.</p>' +
           '</div>'
         );
+      }).catch(function () {
+        state = 'message';
+        addMsg('Une erreur est survenue. Contactez-nous au <strong>02 734 86 38</strong> ou à <a href="mailto:info@notbm.be" style="color:#00B4CC">info@notbm.be</a>.', 'bot', 400);
+        setFooter('');
       });
     }
 
@@ -328,24 +333,12 @@
           }).catch(function (err) {
             console.error('EmailJS status:', err && err.status);
             console.error('EmailJS text:', err && err.text);
-            console.error('EmailJS full:', err);
-            fallbackMailto(email, subject, body);
-            resolve();
+            reject(err);
           });
         } else {
-          fallbackMailto(email, subject, body);
-          resolve();
+          reject(new Error('EmailJS not loaded'));
         }
       });
-    }
-
-    function fallbackMailto(email, subject, body) {
-      var a = document.createElement('a');
-      a.href = 'mailto:' + OFFICE_EMAIL +
-        '?subject=' + encodeURIComponent('Chat — ' + subject) +
-        '&body=' + encodeURIComponent('De : ' + email + '\n\n' + body);
-      a.style.display = 'none';
-      document.body.appendChild(a); a.click(); document.body.removeChild(a);
     }
   });
 })();
