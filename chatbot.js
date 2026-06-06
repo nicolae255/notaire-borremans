@@ -313,18 +313,39 @@
     }
 
     function sendEmail(email, subject, body) {
-      if (window.emailjs) {
-        emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
-          from_email: email, sujet: subject, message: body
-        }).catch(function (err) { console.error('EmailJS:', err); });
-      } else {
-        var a = document.createElement('a');
-        a.href = 'mailto:' + OFFICE_EMAIL +
-          '?subject=' + encodeURIComponent('Chat — ' + subject) +
-          '&body=' + encodeURIComponent('De : ' + email + '\n\n' + body);
-        a.style.display = 'none';
-        document.body.appendChild(a); a.click(); document.body.removeChild(a);
-      }
+      return new Promise(function (resolve, reject) {
+        if (window.emailjs) {
+          emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+            to_email:   OFFICE_EMAIL,
+            email:      OFFICE_EMAIL,
+            from_email: email,
+            reply_to:   email,
+            sujet:      subject,
+            subject:    subject,
+            message:    body
+          }).then(function () {
+            resolve();
+          }).catch(function (err) {
+            console.error('EmailJS status:', err && err.status);
+            console.error('EmailJS text:', err && err.text);
+            console.error('EmailJS full:', err);
+            fallbackMailto(email, subject, body);
+            resolve();
+          });
+        } else {
+          fallbackMailto(email, subject, body);
+          resolve();
+        }
+      });
+    }
+
+    function fallbackMailto(email, subject, body) {
+      var a = document.createElement('a');
+      a.href = 'mailto:' + OFFICE_EMAIL +
+        '?subject=' + encodeURIComponent('Chat — ' + subject) +
+        '&body=' + encodeURIComponent('De : ' + email + '\n\n' + body);
+      a.style.display = 'none';
+      document.body.appendChild(a); a.click(); document.body.removeChild(a);
     }
   });
 })();
