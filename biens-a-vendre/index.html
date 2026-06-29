@@ -320,6 +320,9 @@ function biensTab(type) {
       filterBtns.forEach(function(b) { b.classList.remove('active'); });
       btn.classList.add('active');
       applyFilter(btn.dataset.filter);
+      // Sync how-it-works section with filter
+      if (btn.dataset.filter === 'gg') biensTab('gre');
+      else biensTab('pub');
     });
   });
 
