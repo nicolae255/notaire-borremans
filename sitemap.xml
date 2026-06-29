@@ -1,33 +1,205 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- ── Pages principales ── -->
   <url>
     <loc>https://www.notairebruxelles.be/</loc>
-    <lastmod>2026-05-08</lastmod>
+    <lastmod>2026-06-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.notairebruxelles.be/services/</loc>
-    <lastmod>2026-05-08</lastmod>
+    <lastmod>2026-06-29</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.notairebruxelles.be/biens-a-vendre/</loc>
-    <lastmod>2026-05-08</lastmod>
+    <lastmod>2026-06-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.notairebruxelles.be/contact/</loc>
-    <lastmod>2026-05-08</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.notairebruxelles.be/emplois/</loc>
-    <lastmod>2026-06-04</lastmod>
+    <lastmod>2026-06-29</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.5</priority>
   </url>
+
+  <!-- ── Services FR (avec hreflang) ── -->
+  <url>
+    <loc>https://www.notairebruxelles.be/services/immobilier/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.notairebruxelles.be/services/immobilier/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.notairebruxelles.be/nl/services/immobilier/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.notairebruxelles.be/en/services/immobilier/"/>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.notairebruxelles.be/services/succession-et-donations/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.notairebruxelles.be/services/succession-et-donations/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.notairebruxelles.be/nl/services/succession-et-donations/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.notairebruxelles.be/en/services/succession-et-donations/"/>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.notairebruxelles.be/services/droit-de-la-famille/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.notairebruxelles.be/services/droit-de-la-famille/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.notairebruxelles.be/nl/services/droit-de-la-famille/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.notairebruxelles.be/en/services/droit-de-la-famille/"/>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.notairebruxelles.be/services/ventes-publiques/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.notairebruxelles.be/services/ventes-publiques/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.notairebruxelles.be/nl/services/ventes-publiques/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.notairebruxelles.be/en/services/ventes-publiques/"/>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.notairebruxelles.be/services/entreprise/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.notairebruxelles.be/services/entreprise/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.notairebruxelles.be/nl/services/entreprise/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.notairebruxelles.be/en/services/entreprise/"/>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.notairebruxelles.be/services/conseil-patrimonial/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.notairebruxelles.be/services/conseil-patrimonial/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.notairebruxelles.be/nl/services/conseil-patrimonial/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.notairebruxelles.be/en/services/conseil-patrimonial/"/>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- ── Services NL ── -->
+  <url>
+    <loc>https://www.notairebruxelles.be/nl/services/immobilier/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.notairebruxelles.be/services/immobilier/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.notairebruxelles.be/nl/services/immobilier/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.notairebruxelles.be/en/services/immobilier/"/>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.notairebruxelles.be/nl/services/succession-et-donations/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.notairebruxelles.be/services/succession-et-donations/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.notairebruxelles.be/nl/services/succession-et-donations/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.notairebruxelles.be/en/services/succession-et-donations/"/>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.notairebruxelles.be/nl/services/droit-de-la-famille/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.notairebruxelles.be/services/droit-de-la-famille/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.notairebruxelles.be/nl/services/droit-de-la-famille/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.notairebruxelles.be/en/services/droit-de-la-famille/"/>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.notairebruxelles.be/nl/services/ventes-publiques/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.notairebruxelles.be/services/ventes-publiques/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.notairebruxelles.be/nl/services/ventes-publiques/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.notairebruxelles.be/en/services/ventes-publiques/"/>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.notairebruxelles.be/nl/services/entreprise/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.notairebruxelles.be/services/entreprise/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.notairebruxelles.be/nl/services/entreprise/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.notairebruxelles.be/en/services/entreprise/"/>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.notairebruxelles.be/nl/services/conseil-patrimonial/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.notairebruxelles.be/services/conseil-patrimonial/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.notairebruxelles.be/nl/services/conseil-patrimonial/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.notairebruxelles.be/en/services/conseil-patrimonial/"/>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- ── Services EN ── -->
+  <url>
+    <loc>https://www.notairebruxelles.be/en/services/immobilier/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.notairebruxelles.be/services/immobilier/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.notairebruxelles.be/nl/services/immobilier/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.notairebruxelles.be/en/services/immobilier/"/>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.notairebruxelles.be/en/services/succession-et-donations/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.notairebruxelles.be/services/succession-et-donations/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.notairebruxelles.be/nl/services/succession-et-donations/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.notairebruxelles.be/en/services/succession-et-donations/"/>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.notairebruxelles.be/en/services/droit-de-la-famille/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.notairebruxelles.be/services/droit-de-la-famille/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.notairebruxelles.be/nl/services/droit-de-la-famille/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.notairebruxelles.be/en/services/droit-de-la-famille/"/>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.notairebruxelles.be/en/services/ventes-publiques/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.notairebruxelles.be/services/ventes-publiques/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.notairebruxelles.be/nl/services/ventes-publiques/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.notairebruxelles.be/en/services/ventes-publiques/"/>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.notairebruxelles.be/en/services/entreprise/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.notairebruxelles.be/services/entreprise/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.notairebruxelles.be/nl/services/entreprise/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.notairebruxelles.be/en/services/entreprise/"/>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.notairebruxelles.be/en/services/conseil-patrimonial/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.notairebruxelles.be/services/conseil-patrimonial/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.notairebruxelles.be/nl/services/conseil-patrimonial/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.notairebruxelles.be/en/services/conseil-patrimonial/"/>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>

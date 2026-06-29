@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<style>
+  body { font-family: "Inter", sans-serif; background: #fff; padding: 3rem; }
+  .service-tag {
+    display: inline-block;
+    padding: 0.35rem 0.9rem;
+    border: 1.5px solid #d1d5db;
+    border-radius: 999px;
+    font-size: 0.82rem;
+    color: #374151;
+    margin: 0.25rem 0.25rem 0.25rem 0;
+  }
+  .tags { margin-bottom: 1.75rem; }
+  .srv-cta-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #00a8a8;
+    text-decoration: none;
+    border-bottom: 1.5px solid transparent;
+    transition: border-color 0.2s, gap 0.2s;
+  }
+  .srv-cta-link:hover { border-bottom-color: #00a8a8; gap: 0.65rem; }
+  .srv-cta-arrow { transition: transform 0.2s; display: inline-block; }
+  .srv-cta-link:hover .srv-cta-arrow { transform: translateX(3px); }
+</style>
+</head>
+<body>
+  <div class="tags">
+    <span class="service-tag">Compromis de vente</span>
+    <span class="service-tag">Acte authentique</span>
+    <span class="service-tag">Droit d'hypothèque</span>
+    <span class="service-tag">Partage immobilier</span>
+    <span class="service-tag">Vente en viager</span>
+    <span class="service-tag">Certificat PEB</span>
+  </div>
+  <a href="#" class="srv-cta-link">En savoir plus <span class="srv-cta-arrow">→</span></a>
+</body>
+</html>
