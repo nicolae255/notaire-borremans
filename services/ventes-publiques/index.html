@@ -225,47 +225,108 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- SECTION 3 — DÉROULEMENT -->
 <section class="seo-section">
   <div class="container">
-    <h2 style="font-size:clamp(1.4rem,3vw,2rem);margin-bottom:0.75rem">Comment se déroule une vente publique par l'étude Borremans ?</h2>
-    <p style="color:var(--mute);font-size:0.93rem;line-height:1.78;max-width:760px;margin-bottom:2rem">De la décision de vendre à la remise des clés, notre étude prend en charge l'intégralité du processus.</p>
-    <div>
+    <h2 style="font-size:clamp(1.4rem,3vw,2rem);margin-bottom:0.75rem">Comment se déroule une vente par l'étude Borremans ?</h2>
+    <p style="color:var(--mute);font-size:0.93rem;line-height:1.78;max-width:760px;margin-bottom:2rem">De la décision de vendre à la remise des clés, notre étude prend en charge l'intégralité du processus. Choisissez le type de vente pour voir le parcours correspondant.</p>
+
+    <!-- Toggle -->
+    <div style="display:inline-flex;border:1px solid var(--line);border-radius:6px;overflow:hidden;margin-bottom:2.5rem">
+      <button id="tab-publique" onclick="switchTab('publique')" style="padding:0.65rem 1.5rem;font-size:0.85rem;font-weight:600;border:none;cursor:pointer;background:var(--teal);color:#fff;font-family:var(--sans);transition:all 0.2s">Vente publique</button>
+      <button id="tab-gre" onclick="switchTab('gre')" style="padding:0.65rem 1.5rem;font-size:0.85rem;font-weight:600;border:none;cursor:pointer;background:#fff;color:var(--mute);font-family:var(--sans);transition:all 0.2s">Vente de gré à gré</button>
+    </div>
+
+    <!-- Parcours vente publique -->
+    <div id="steps-publique">
       <div class="step">
         <div class="step-num">1</div>
         <div>
           <h3 style="font-size:0.95rem;font-weight:600;margin-bottom:0.4rem">Consultation initiale et évaluation</h3>
-          <p style="font-size:0.88rem;color:var(--mute);line-height:1.7">Premier rendez-vous pour analyser votre bien, discuter de la méthode de vente (publique ou de gré à gré), estimer le prix de mise en vente et définir le calendrier. Nous vous présentons toutes les options et leurs implications fiscales.</p>
+          <p style="font-size:0.88rem;color:var(--mute);line-height:1.7">Premier rendez-vous pour analyser votre bien, estimer le prix de mise en vente et définir le calendrier de la vente aux enchères. Nous vous présentons les conditions et implications de la vente publique.</p>
         </div>
       </div>
       <div class="step">
         <div class="step-num">2</div>
         <div>
-          <h3 style="font-size:0.95rem;font-weight:600;margin-bottom:0.4rem">Constitution du dossier</h3>
-          <p style="font-size:0.88rem;color:var(--mute);line-height:1.7">Notre étude collecte tous les documents : titres de propriété, renseignements urbanistiques, certificat PEB, attestation du sol, situation hypothécaire, charges de copropriété le cas échéant. Rédaction du cahier des charges qui fixera les conditions de la vente.</p>
+          <h3 style="font-size:0.95rem;font-weight:600;margin-bottom:0.4rem">Constitution du dossier et cahier des charges</h3>
+          <p style="font-size:0.88rem;color:var(--mute);line-height:1.7">Notre étude collecte tous les documents obligatoires : titres de propriété, renseignements urbanistiques, certificat PEB, attestation du sol, situation hypothécaire. Rédaction du cahier des charges qui fixera les conditions juridiques de la vente.</p>
         </div>
       </div>
       <div class="step">
         <div class="step-num">3</div>
         <div>
-          <h3 style="font-size:0.95rem;font-weight:600;margin-bottom:0.4rem">Publicité et visites</h3>
-          <p style="font-size:0.88rem;color:var(--mute);line-height:1.7">Publication sur Biddit.be, affichage légal, et annonces complémentaires si nécessaire. Organisation des visites du bien pour les candidats acheteurs. Notre étude assure la permanence téléphonique pour répondre aux questions.</p>
+          <h3 style="font-size:0.95rem;font-weight:600;margin-bottom:0.4rem">Publication sur Biddit et organisation des visites</h3>
+          <p style="font-size:0.88rem;color:var(--mute);line-height:1.7">Le bien est publié sur Biddit.be avec photos, description détaillée et cahier des charges. Affichage légal sur le bien. Organisation des visites pour les candidats acheteurs avant la date d'enchères.</p>
         </div>
       </div>
       <div class="step">
         <div class="step-num">4</div>
         <div>
           <h3 style="font-size:0.95rem;font-weight:600;margin-bottom:0.4rem">Séance d'enchères et adjudication</h3>
-          <p style="font-size:0.88rem;color:var(--mute);line-height:1.7">Conduite de la séance d'enchères (en ligne via Biddit ou en présentiel selon les cas). Le bien est adjugé au plus offrant si l'offre atteint le prix de réserve éventuel. L'adjudicataire verse immédiatement un acompte (généralement 10%).</p>
+          <p style="font-size:0.88rem;color:var(--mute);line-height:1.7">Conduite de la séance d'enchères en ligne via Biddit. Le bien est adjugé au plus offrant si l'offre atteint le prix de réserve éventuel. L'adjudicataire verse immédiatement un acompte (généralement 10%). L'adjudication est définitive et sans délai de rétractation.</p>
         </div>
       </div>
       <div class="step">
         <div class="step-num">5</div>
         <div>
           <h3 style="font-size:0.95rem;font-weight:600;margin-bottom:0.4rem">Acte authentique et remise des clés</h3>
-          <p style="font-size:0.88rem;color:var(--mute);line-height:1.7">Signature de l'acte authentique dans le délai prévu au cahier des charges. Paiement du solde du prix et des frais. Remise des clés et transcription de l'acte à la Conservation des hypothèques.</p>
+          <p style="font-size:0.88rem;color:var(--mute);line-height:1.7">Signature de l'acte authentique dans le délai prévu au cahier des charges (généralement 6 semaines). Paiement du solde et des frais. Remise des clés et inscription de l'acte au Bureau de Sécurité Juridique (BSJ).</p>
         </div>
       </div>
+      <p style="font-size:0.8rem;color:var(--mute);margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--line)">⏱ Durée totale estimée : <strong>6 à 10 semaines</strong> entre la décision de vendre et la signature de l'acte authentique.</p>
+    </div>
+
+    <!-- Parcours gré à gré -->
+    <div id="steps-gre" style="display:none">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div>
+          <h3 style="font-size:0.95rem;font-weight:600;margin-bottom:0.4rem">Consultation initiale et stratégie de vente</h3>
+          <p style="font-size:0.88rem;color:var(--mute);line-height:1.7">Premier rendez-vous pour analyser votre bien, estimer le prix de marché et définir la stratégie de diffusion (réseau notarial, annonces, bouche-à-oreille). Plus flexible que la vente publique, la vente de gré à gré vous laisse le contrôle du prix et du calendrier.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div>
+          <h3 style="font-size:0.95rem;font-weight:600;margin-bottom:0.4rem">Constitution du dossier juridique</h3>
+          <p style="font-size:0.88rem;color:var(--mute);line-height:1.7">Collecte des documents obligatoires : titres de propriété, renseignements urbanistiques, certificat PEB, attestation du sol, situation hypothécaire, charges de copropriété le cas échéant. Tout est vérifié par l'étude avant de présenter le bien à des acheteurs.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div>
+          <h3 style="font-size:0.95rem;font-weight:600;margin-bottom:0.4rem">Recherche d'acquéreur et réception des offres</h3>
+          <p style="font-size:0.88rem;color:var(--mute);line-height:1.7">L'étude diffuse le bien auprès de son réseau et accompagne les visites. Les offres d'achat sont reçues et analysées. Nous vous conseillons sur chaque proposition et négocions dans votre intérêt pour obtenir le meilleur prix et les meilleures conditions.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div>
+          <h3 style="font-size:0.95rem;font-weight:600;margin-bottom:0.4rem">Compromis de vente</h3>
+          <p style="font-size:0.88rem;color:var(--mute);line-height:1.7">Signature du compromis entre vendeur et acheteur, rédigé par le notaire. L'acheteur dispose d'un délai légal de réflexion. Un acompte (généralement 10% du prix) est versé sur le compte de tiers du notaire, garantissant la sécurité de la transaction pour les deux parties.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">5</div>
+        <div>
+          <h3 style="font-size:0.95rem;font-weight:600;margin-bottom:0.4rem">Acte authentique et remise des clés</h3>
+          <p style="font-size:0.88rem;color:var(--mute);line-height:1.7">Signature de l'acte de vente devant notaire dans le délai convenu au compromis (généralement 2 à 4 mois). Paiement du solde du prix et des droits d'enregistrement. Inscription au Bureau de Sécurité Juridique (BSJ) et remise des clés au nouvel acquéreur.</p>
+        </div>
+      </div>
+      <p style="font-size:0.8rem;color:var(--mute);margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--line)">⏱ Durée totale estimée : <strong>2 à 4 mois</strong> entre le compromis signé et l'acte authentique, variable selon les parties.</p>
     </div>
   </div>
 </section>
+
+<script>
+function switchTab(type) {
+  var isPublique = type === 'publique';
+  document.getElementById('steps-publique').style.display = isPublique ? 'block' : 'none';
+  document.getElementById('steps-gre').style.display = isPublique ? 'none' : 'block';
+  document.getElementById('tab-publique').style.background = isPublique ? 'var(--teal)' : '#fff';
+  document.getElementById('tab-publique').style.color = isPublique ? '#fff' : 'var(--mute)';
+  document.getElementById('tab-gre').style.background = isPublique ? '#fff' : 'var(--teal)';
+  document.getElementById('tab-gre').style.color = isPublique ? 'var(--mute)' : '#fff';
+}
+</script>
 
 <!-- SECTION 4 — CAS PARTICULIERS -->
 <section class="seo-section" style="background:#F9FAFB">

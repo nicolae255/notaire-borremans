@@ -149,50 +149,85 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<!-- INFO VENTES PUBLIQUES -->
+<!-- INFO VENTES -->
 <section style="padding:clamp(4rem,8vw,6rem) 0;background:#fff;border-top:1px solid var(--line)">
   <div class="container">
-    <div class="two-col-grid">
+
+    <!-- Toggle -->
+    <div style="display:inline-flex;border:1px solid var(--line);border-radius:6px;overflow:hidden;margin-bottom:2.75rem">
+      <button id="biens-tab-pub" onclick="biensTab('pub')" style="padding:0.6rem 1.4rem;font-size:0.82rem;font-weight:600;border:none;cursor:pointer;background:var(--teal);color:#fff;font-family:var(--sans);transition:all 0.2s">Vente publique</button>
+      <button id="biens-tab-gre" onclick="biensTab('gre')" style="padding:0.6rem 1.4rem;font-size:0.82rem;font-weight:600;border:none;cursor:pointer;background:#fff;color:var(--mute);font-family:var(--sans);transition:all 0.2s">Vente de gré à gré</button>
+    </div>
+
+    <!-- Vente publique -->
+    <div id="biens-pub" class="two-col-grid">
       <div>
-        <p class="eyebrow" style="margin-bottom:1rem;color:var(--teal)" data-i18n="biens.info.eyebrow">Vente publique notariale</p>
-        <h2 style="font-size:clamp(1.6rem,2.8vw,2rem);margin-bottom:1.25rem;line-height:1.2" data-i18n="biens.info.h2">Comment fonctionne une vente publique ?</h2>
-        <p style="color:var(--mute);font-size:0.92rem;line-height:1.8;margin-bottom:1rem" data-i18n="biens.info.p1">La vente publique notariale est organisée sous l'autorité du notaire. Elle offre une transparence totale et une sécurité juridique maximale pour les vendeurs et les acquéreurs.</p>
-        <p style="color:var(--mute);font-size:0.92rem;line-height:1.8;margin-bottom:1.75rem" data-i18n="biens.info.p2">Depuis 2020, les enchères se déroulent principalement sur la plateforme <strong style="color:var(--ink);font-weight:600">Biddit</strong>, permettant de participer en ligne depuis toute la Belgique.</p>
-        <a href="../contact/" class="btn btn-outline-teal" data-i18n="biens.info.cta">Confier mon bien</a>
+        <p class="eyebrow" style="margin-bottom:1rem;color:var(--teal)">Vente publique notariale</p>
+        <h2 style="font-size:clamp(1.6rem,2.8vw,2rem);margin-bottom:1.25rem;line-height:1.2">Comment fonctionne une vente publique ?</h2>
+        <p style="color:var(--mute);font-size:0.92rem;line-height:1.8;margin-bottom:1rem">La vente publique notariale est organisée sous l'autorité du notaire. Elle offre une transparence totale et une sécurité juridique maximale pour les vendeurs et les acquéreurs.</p>
+        <p style="color:var(--mute);font-size:0.92rem;line-height:1.8;margin-bottom:1.75rem">Depuis 2020, les enchères se déroulent principalement sur la plateforme <strong style="color:var(--ink);font-weight:600">Biddit</strong>, permettant de participer en ligne depuis toute la Belgique.</p>
+        <a href="../contact/" class="btn btn-outline-teal">Confier mon bien</a>
       </div>
       <div style="display:flex;flex-direction:column;gap:1.75rem">
         <div style="display:flex;gap:1.25rem;align-items:flex-start">
           <div style="width:38px;height:38px;flex-shrink:0;background:var(--teal-light);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--teal);font-size:0.72rem;font-weight:600">01</div>
-          <div>
-            <strong style="display:block;font-size:0.88rem;margin-bottom:0.3rem;font-weight:600" data-i18n="biens.step.01.title">Estimation du bien</strong>
-            <p style="color:var(--mute);font-size:0.85rem;line-height:1.65" data-i18n="biens.step.01.desc">Notre étude établit un prix de base cohérent avec le marché immobilier local.</p>
-          </div>
+          <div><strong style="display:block;font-size:0.88rem;margin-bottom:0.3rem;font-weight:600">Estimation du bien</strong><p style="color:var(--mute);font-size:0.85rem;line-height:1.65">Notre étude établit un prix de base cohérent avec le marché immobilier local.</p></div>
         </div>
         <div style="display:flex;gap:1.25rem;align-items:flex-start">
           <div style="width:38px;height:38px;flex-shrink:0;background:var(--teal-light);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--teal);font-size:0.72rem;font-weight:600">02</div>
-          <div>
-            <strong style="display:block;font-size:0.88rem;margin-bottom:0.3rem;font-weight:600" data-i18n="biens.step.02.title">Publication et visites</strong>
-            <p style="color:var(--mute);font-size:0.85rem;line-height:1.65" data-i18n="biens.step.02.desc">Le bien est publié sur Biddit et les sites partenaires. Des visites sont organisées avant la vente.</p>
-          </div>
+          <div><strong style="display:block;font-size:0.88rem;margin-bottom:0.3rem;font-weight:600">Publication sur Biddit et visites</strong><p style="color:var(--mute);font-size:0.85rem;line-height:1.65">Le bien est publié sur Biddit et les sites partenaires. Des visites sont organisées avant la date d'enchères.</p></div>
         </div>
         <div style="display:flex;gap:1.25rem;align-items:flex-start">
           <div style="width:38px;height:38px;flex-shrink:0;background:var(--teal-light);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--teal);font-size:0.72rem;font-weight:600">03</div>
-          <div>
-            <strong style="display:block;font-size:0.88rem;margin-bottom:0.3rem;font-weight:600" data-i18n="biens.step.03.title">Séance d'adjudication</strong>
-            <p style="color:var(--mute);font-size:0.85rem;line-height:1.65" data-i18n="biens.step.03.desc">Les enchères sont ouvertes en ligne ou en présence. Le notaire adjuge le bien au meilleur enchérisseur.</p>
-          </div>
+          <div><strong style="display:block;font-size:0.88rem;margin-bottom:0.3rem;font-weight:600">Séance d'adjudication</strong><p style="color:var(--mute);font-size:0.85rem;line-height:1.65">Les enchères sont ouvertes en ligne via Biddit. Le notaire adjuge le bien au meilleur enchérisseur. L'adjudication est immédiate et sans délai de rétractation.</p></div>
         </div>
         <div style="display:flex;gap:1.25rem;align-items:flex-start">
           <div style="width:38px;height:38px;flex-shrink:0;background:var(--teal-light);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--teal);font-size:0.72rem;font-weight:600">04</div>
-          <div>
-            <strong style="display:block;font-size:0.88rem;margin-bottom:0.3rem;font-weight:600" data-i18n="biens.step.04.title">Acte notarié</strong>
-            <p style="color:var(--mute);font-size:0.85rem;line-height:1.65" data-i18n="biens.step.04.desc">Notre étude rédige et authentifie l'acte de vente dans les délais légaux.</p>
-          </div>
+          <div><strong style="display:block;font-size:0.88rem;margin-bottom:0.3rem;font-weight:600">Acte authentique</strong><p style="color:var(--mute);font-size:0.85rem;line-height:1.65">Notre étude rédige et authentifie l'acte de vente dans le délai prévu au cahier des charges (généralement 6 semaines).</p></div>
         </div>
       </div>
     </div>
+
+    <!-- Vente de gré à gré -->
+    <div id="biens-gre" class="two-col-grid" style="display:none">
+      <div>
+        <p class="eyebrow" style="margin-bottom:1rem;color:var(--teal)">Vente de gré à gré par notaire</p>
+        <h2 style="font-size:clamp(1.6rem,2.8vw,2rem);margin-bottom:1.25rem;line-height:1.2">Comment fonctionne une vente de gré à gré ?</h2>
+        <p style="color:var(--mute);font-size:0.92rem;line-height:1.8;margin-bottom:1rem">La vente de gré à gré est une vente classique entre un vendeur et un acheteur identifié, organisée et sécurisée par le notaire. Pas d'enchères — vous choisissez votre acheteur et négociez librement le prix.</p>
+        <p style="color:var(--mute);font-size:0.92rem;line-height:1.8;margin-bottom:1.75rem">Plus flexible que la vente publique, elle est adaptée lorsque vous avez déjà un acheteur potentiel ou souhaitez maîtriser le processus de négociation tout en bénéficiant de toutes les garanties d'un acte authentique.</p>
+        <a href="../contact/" class="btn btn-outline-teal">Confier mon bien</a>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:1.75rem">
+        <div style="display:flex;gap:1.25rem;align-items:flex-start">
+          <div style="width:38px;height:38px;flex-shrink:0;background:var(--teal-light);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--teal);font-size:0.72rem;font-weight:600">01</div>
+          <div><strong style="display:block;font-size:0.88rem;margin-bottom:0.3rem;font-weight:600">Estimation et mise en marché</strong><p style="color:var(--mute);font-size:0.85rem;line-height:1.65">Notre étude estime le juste prix de marché et diffuse le bien auprès de son réseau d'acquéreurs potentiels.</p></div>
+        </div>
+        <div style="display:flex;gap:1.25rem;align-items:flex-start">
+          <div style="width:38px;height:38px;flex-shrink:0;background:var(--teal-light);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--teal);font-size:0.72rem;font-weight:600">02</div>
+          <div><strong style="display:block;font-size:0.88rem;margin-bottom:0.3rem;font-weight:600">Offres et négociation</strong><p style="color:var(--mute);font-size:0.85rem;line-height:1.65">Les acheteurs potentiels formulent des offres. Nous vous conseillons sur chaque proposition et négocions dans votre intérêt.</p></div>
+        </div>
+        <div style="display:flex;gap:1.25rem;align-items:flex-start">
+          <div style="width:38px;height:38px;flex-shrink:0;background:var(--teal-light);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--teal);font-size:0.72rem;font-weight:600">03</div>
+          <div><strong style="display:block;font-size:0.88rem;margin-bottom:0.3rem;font-weight:600">Compromis de vente</strong><p style="color:var(--mute);font-size:0.85rem;line-height:1.65">Signature du compromis rédigé par le notaire. Un acompte (généralement 10%) est versé sur le compte de tiers de l'étude.</p></div>
+        </div>
+        <div style="display:flex;gap:1.25rem;align-items:flex-start">
+          <div style="width:38px;height:38px;flex-shrink:0;background:var(--teal-light);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--teal);font-size:0.72rem;font-weight:600">04</div>
+          <div><strong style="display:block;font-size:0.88rem;margin-bottom:0.3rem;font-weight:600">Acte authentique</strong><p style="color:var(--mute);font-size:0.85rem;line-height:1.65">Signature de l'acte devant notaire dans le délai convenu au compromis (généralement 2 à 4 mois). Remise des clés.</p></div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
+<script>
+function biensTab(type) {
+  var pub = type === 'pub';
+  document.getElementById('biens-pub').style.display = pub ? '' : 'none';
+  document.getElementById('biens-gre').style.display = pub ? 'none' : '';
+  document.getElementById('biens-tab-pub').style.cssText = 'padding:0.6rem 1.4rem;font-size:0.82rem;font-weight:600;border:none;cursor:pointer;font-family:var(--sans);transition:all 0.2s;background:' + (pub ? 'var(--teal);color:#fff' : '#fff;color:var(--mute)');
+  document.getElementById('biens-tab-gre').style.cssText = 'padding:0.6rem 1.4rem;font-size:0.82rem;font-weight:600;border:none;cursor:pointer;font-family:var(--sans);transition:all 0.2s;background:' + (pub ? '#fff;color:var(--mute)' : 'var(--teal);color:#fff');
+}
+</script>
 
 <!-- FOOTER -->
 <footer class="footer">
