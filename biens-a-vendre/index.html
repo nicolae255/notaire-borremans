@@ -109,39 +109,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Cards grid -->
     <div class="biens-grid" id="biens-grid">
 
-      <!-- Maison, Anderlecht, Vente publique -->
-      <article class="bien-card" data-mode="vp">
-        <a href="https://immo.notaire.be/fr/une-maison-dhabitation/a-vendre/45-rue-de-la-conciliation-1070-anderlecht/183952" target="_blank" rel="noopener noreferrer">
-          <div class="bien-img-wrap">
-            <span class="bien-status en-cours" data-i18n="biens.status">En vente</span>
-            <span class="bien-mode" data-i18n="biens.mode.vp">Vente publique</span>
-            <picture>
-              <source srcset="../img/biens/maison-anderlecht.webp" type="image/webp" />
-              <img src="../img/biens/maison-anderlecht.jpg" alt="Maison à Anderlecht" fetchpriority="high" />
-            </picture>
-          </div>
-        </a>
-        <div class="bien-body">
-          <div class="bien-addr">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a8 8 0 0 1 8 8c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 8-8z"/><circle cx="12" cy="10" r="3"/></svg>
-            Anderlecht · Rue de la Conciliation 45
-          </div>
-          <p class="bien-title">Maison</p>
-          <a href="https://immo.notaire.be/fr/une-maison-dhabitation/a-vendre/45-rue-de-la-conciliation-1070-anderlecht/183952" target="_blank" rel="noopener noreferrer" class="bien-link">
-            <span>Voir l'annonce</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H9M17 7V15" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-        </div>
-      </article>
-
-      <!-- Empty state — affiché automatiquement quand aucune carte n'est présente -->
+      <!-- Empty state -->
       <div class="biens-empty" id="empty-state">
         <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.25" aria-hidden="true">
           <path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1H4a1 1 0 01-1-1V9.5z" stroke-linecap="round" stroke-linejoin="round"/>
           <path d="M9 21V12h6v9" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
-        <h3 data-i18n="biens.empty.h3">Aucun bien disponible actuellement</h3>
-        <p data-i18n="biens.empty.p">De nouveaux biens seront bientôt mis en vente. Contactez-nous pour être informé en priorité ou pour nous confier la vente de votre bien.</p>
+        <h3 data-i18n="biens.empty.h3">Tous nos biens ont trouvé preneur</h3>
+        <p data-i18n="biens.empty.p">Notre portefeuille est actuellement vendu. De nouveaux biens seront prochainement disponibles — contactez notre étude pour être informé en priorité ou pour nous confier la vente de votre bien.</p>
         <a href="../contact/" class="btn btn-primary" data-i18n="biens.empty.cta">Nous contacter</a>
       </div>
 
