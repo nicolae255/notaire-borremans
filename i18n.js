@@ -6,6 +6,7 @@
       'brand.name': 'Étude Notariale',
       'nav.services': 'Services',
       'nav.biens': 'Biens à vendre',
+      'nav.emplois': 'Emplois',
       'nav.cta': 'Rendez-vous',
 
       'home.hero.eyebrow': 'Notaire Stephan Borremans &mdash; Schaerbeek',
@@ -225,6 +226,7 @@
       'brand.name': 'Notariskantoor',
       'nav.services': 'Diensten',
       'nav.biens': 'Te koop',
+      'nav.emplois': 'Vacatures',
       'nav.cta': 'Afspraak',
 
       'home.hero.eyebrow': 'Notaris Stephan Borremans — Schaarbeek',
@@ -444,6 +446,7 @@
       'brand.name': 'Notary Office',
       'nav.services': 'Services',
       'nav.biens': 'Properties',
+      'nav.emplois': 'Vacancies',
       'nav.cta': 'Appointment',
 
       'home.hero.eyebrow': 'Notary Stephan Borremans — Schaerbeek',
